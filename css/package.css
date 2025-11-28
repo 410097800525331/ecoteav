@@ -74,11 +74,15 @@
     top: 100%;
   }
 }
-@media (max-width: 770px) {
+@media (max-width: 768px) {
   .package_header {
     display: inline-block;
   }
   .package_grid {
     grid-template-columns: 1fr;
+  }
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }

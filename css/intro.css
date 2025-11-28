@@ -10,7 +10,7 @@
 .intro_images img {
   background: #ccc;
 }
-@media (max-width: 770px) {
+@media (max-width: 768px) {
 .intro_images img {
     width: 300px;
   }
