@@ -1,0 +1,136 @@
+@charset 'utf-8';
+@import url(./reset.css);
+@import url(./common.css);
+@import url(./header.css);
+@import url(./banner.css);
+@import url(./intro.css);
+@import url(./package.css);
+@import url(./inquiry.css);
+@import url(./rolling.css);
+@import url(./footer.css);
+.down_bg {
+  width: 100%;
+  background: #ccc;
+  text-align: center;
+  margin-top: 120px;
+}
+.downloads {
+  padding: 70px 0;
+}
+.downloads a {
+  margin-top: 40px;
+}
+
+
+
+/* #rolling {
+  text-align: center;
+  background-color: var(--bs);
+  margin-top: 120px;
+}
+.rolling_text {
+  font-weight: bold;
+  letter-spacing: 10px;
+  color: #fff;
+  background: var(--tm);
+  white-space: nowrap;
+  overflow: hidden;
+}
+.rolling_inner {
+  display: flex;
+  animation: textRoll1 60s linear infinite;
+}
+@keyframes textRoll1 {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+} */
+
+/* <div class="rolling_text">
+      <div class="rolling_inner">
+        <span>ECO TEA LIVE CREATIVE ECOTEAV LIVE NATIRAL BLEND CREATIVE</span>
+      </div>
+    </div>
+ count
+<div class="dashboard">
+    <div class="stat_card">
+      <div class="stat_title">함께한 기업</div>
+      <div>
+        <span class="stat_value">1,760</span>
+        <span class="stat_unit">+ 개</span>
+      </div>
+    </div>
+    <div class="stat_card">
+      <div class="stat_title">평균 소요일</div>
+      <div>
+        <span class="stat_value">18</span>
+        <span class="stat_unit">일</span>
+      </div>
+    </div>
+    <div class="stat_card">
+      <div class="stat_title">MOQ(최소 주문 수량)</div>
+      <div>
+        <span class="stat_value">500</span>
+        <span class="stat_unit">개</span>
+      </div>
+    </div>
+    <div class="stat_card">
+      <div class="stat_title">만족도</div>
+      <div>
+        <span class="stat_value">99</span>
+        <span class="stat_unit">%</span>
+      </div>
+    </div>
+  </div> */
+/* .dashboard {
+  display: flex;
+  max-width: 70%;
+  margin: 30px auto;
+  text-align-last: left;
+}
+.stat_card {
+  flex: 1;
+  padding: 40px 20px;
+  border-right: 1px solid var(--ts);
+}
+.stat_card:last-child {
+  border-right: none;
+}
+.stat_title {
+  color: var(--tm);
+  margin-bottom: 20px;
+}
+.stat_value {
+  font-size: 5.6rem;
+  font-weight: 700;
+  color: var(--tm);
+  line-height: 1;
+}
+.stat_unit {
+  font-size: 2.2rem;
+  color: var(--ts);
+  margin-left: 4px;
+}
+@media (max-width: 380px) {
+  .dashboard {
+    flex-wrap: wrap;
+    text-align: center;
+    flex-direction: column;
+  }
+  .stat_value {
+    font-size: 2.4rem;
+  }
+  .stat_unit {
+    font-size: 1.8rem;
+  }
+  .stat_card {
+    border-right: none;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  .stat_card:last-child {
+    border-bottom: none;
+  }
+} */

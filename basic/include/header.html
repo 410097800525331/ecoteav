@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>에코티브 - 브랜드굿즈제작, 티백OEM/ODM, 블렌딩티 개발, 향료 개발</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+  <header id="header" class="header">
+    <div class="header_inner">
+      <!-- 로고 -->
+      <h1 class="logo"><a href="../../index.html"><img src="./assets/img/ecoteav_logo.png" alt="에코티브 로고"></a></h1>
+      <!-- 데스크탑 메뉴 -->
+      <nav class="nav_menu">
+        <ul class="menu_list">
+          <li class="menu_item">
+            <a href="#">기업소개</a>
+            <ul class="submenu_list">
+              <li><a href="#">기업소개/CI</a></li>
+              <li><a href="#">연혁</a></li>
+              <li><a href="#">오시는길</a></li>
+            </ul>
+          </li>
+          <li class="menu_item">
+            <a href="#">상담/견적 신청</a>
+            <ul class="submenu_list">
+              <li><a href="#">블렌딩티 상담신청</a></li>
+              <li><a href="#">향료 상담신청</a></li>
+              <li><a href="#">방문 상담신청</a></li>
+            </ul>
+          </li>
+          <li class="menu_item">
+            <a href="#">OEM/ODM</a>
+            <ul class="submenu_list">
+              <li><a href="#">프로세스</a></li>
+              <li><a href="#">협력사</a></li>
+              <li><a href="#">포트폴리오</a></li>
+              <li><a href="#">B2B 결제</a></li>
+            </ul>
+          </li>
+          <li class="menu_item">
+            <a href="#">패키지 제작</a>
+            <ul class="submenu_list">
+              <li><a href="#">풀컬러 삼방</a></li>
+              <li><a href="#">풀컬러 자동롤</a></li>
+              <li><a href="#">지퍼스탠드</a></li>
+              <li><a href="#">단상자</a></li>
+              <li><a href="#">칼선 다운로드</a></li>
+            </ul>
+          </li>
+          <li class="menu_item">
+            <a href="#">취급원료(Shop)</a>
+            <ul class="submenu_list">
+              <li><a href="#">허브/홍차</a></li>
+              <li><a href="#">국내산 원료</a></li>
+              <li><a href="#">시그니쳐 향료</a></li>
+              <li><a href="#">샘플 신청</a></li>
+            </ul>
+          </li>
+          <li class="menu_item">
+            <a href="#">문의하기</a>
+            <ul class="submenu_list">
+              <li><a href="#">1:1 문의하기</a></li>
+              <li><a href="#">협업 문의하기</a></li>
+              <li><a href="#">패키지 문의하기</a></li>
+              <li><a href="#">자주 묻는 질문</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <!-- 우측 계정 메뉴 -->
+      <div class="user_menu">
+        <a href="#" class="user_link">로그인</a>
+        <a href="#" class="user_link">회원가입</a>
+        <a href="#" class="user_link">내 정보</a>
+      </div>
+      <!-- 햄버거 버튼 -->
+      <div class="hamburger" id="hamburger_btn">
+        <span></span><span></span><span></span>
+      </div>
+      <!-- X 닫기 버튼 -->
+      <div class="close_btn" id="close_btn">×</div>
+    </div>
+  </header>
+
+  <!-- 모바일 메뉴 -->
+  <nav class="mobile_nav" id="mobile_nav">
+    <!-- 계정 메뉴 모바일 (상단으로 이동) -->
+    <div class="mobile_user_menu">
+      <a href="#">로그인</a>
+      <a href="#">회원가입</a>
+      <a href="#">내 정보</a>
+    </div>
+    <ul class="mobile_menu_list">
+      <li class="mobile_menu_item">
+        <a href="#" class="mobile_menu_btn">기업소개<span class="toggle_icon">+</span></a>
+        <ul class="mobile_submenu">
+          <li><a href="#">회사소개/CI</a></li>
+          <li><a href="#">연혁</a></li>
+          <li><a href="#">오시는길</a></li>
+        </ul>
+      </li>
+      <li class="mobile_menu_item">
+        <a href="#" class="mobile_menu_btn">상담/견적 신청<span class="toggle_icon">+</span></a>
+        <ul class="mobile_submenu">
+          <li><a href="#">블렌딩티 상담신청</a></li>
+          <li><a href="#">향료 상담신청</a></li>
+          <li><a href="#">방문 상담신청</a></li>
+        </ul>
+      </li>
+      <li class="mobile_menu_item">
+        <a href="#" class="mobile_menu_btn">OEM/ODM<span class="toggle_icon">+</span></a>
+        <ul class="mobile_submenu">
+          <li><a href="#">프로세스</a></li>
+          <li><a href="#">협력사</a></li>
+          <li><a href="#">포트폴리오</a></li>
+          <li><a href="#">B2B 결제</a></li>
+        </ul>
+      </li>
+      <li class="mobile_menu_item">
+        <a href="#" class="mobile_menu_btn">패키지 제작<span class="toggle_icon">+</span></a>
+        <ul class="mobile_submenu">
+          <li><a href="#">풀컬러 삼방</a></li>
+          <li><a href="#">풀컬러 자동롤</a></li>
+          <li><a href="#">지퍼스탠드</a></li>
+          <li><a href="#">단상자</a></li>
+          <li><a href="#">칼선 다운로드</a></li>
+        </ul>
+      </li>
+      <li class="mobile_menu_item">
+        <a href="#" class="mobile_menu_btn">취급원료(Shop)<span class="toggle_icon">+</span></a>
+        <ul class="mobile_submenu">
+          <li><a href="#">허브/홍차</a></li>
+          <li><a href="#">국내산 원료</a></li>
+          <li><a href="#">시그니쳐 향료</a></li>
+          <li><a href="#">샘플 신청</a></li>
+        </ul>
+      </li>
+      <li class="mobile_menu_item">
+        <a href="#" class="mobile_menu_btn">문의하기<span class="toggle_icon">+</span></a>
+        <ul class="mobile_submenu">
+          <li><a href="#">1:1 문의하기</a></li>
+          <li><a href="#">협업 문의하기</a></li>
+          <li><a href="#">패키지 문의하기</a></li>
+          <li><a href="#">자주 묻는 질문</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <script src="../../js/header.js"></script>
+</body>
+
+</html>

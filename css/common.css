@@ -1,0 +1,109 @@
+@charset "utf-8";
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css');
+:root {
+  --tm: #191919;
+  --ts: #797979;
+  --bm: #f5f5f5;
+  --bs: #eee;
+  --mc: #C1AFA1;
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+body {
+  font: 16px/1.7 'Pretendard', sans-serif;
+  color: var(--gray-main)
+}
+h2 {
+  color: var(--tm);
+  font-size: 3.8rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+h3 {
+  color: var(--ts);
+  margin-bottom: 8px;
+}
+p {
+  color: var(--ts);
+  font-size: 1.5rem;
+  margin: 20px 0;
+}
+section {
+  padding-top: 120px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+@media (max-width: 1024px) {
+  h2 {
+    font-size: 3.2rem;
+  }
+  p {
+    font-size: 1.4rem;
+  }
+  section {width: 90%;}
+}
+a {
+  color: var(--tm);
+}
+
+/*  */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.red {
+  color: red;
+}
+
+/* 버튼 */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 40px;
+  border-radius: 8px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.more_btn {
+  background: var(--tm);
+  color: #fff;
+}
+.view_btn {
+  background: #fff;
+  color: var(--tm);
+}
+.more_btn::after,
+.view_btn::after {
+  content: '→';
+  font-size: 18px;
+}
+
+.btn_ {
+  padding: 10px 40px;
+  border-radius: 8px;
+  margin: 10px 0;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.basic_btn_w {
+  background: #fff;
+  color: var(--tm);
+}
+.basic_btn_b {
+  background: var(--tm);
+  color: #fff;
+}
+.basic_btn_b:hover,
+.more_btn:hover {
+  background: #292929;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.10);
+}
+.view_btn:hover,
+.basic_btn:hover {
+  background: #f9f9f9;
+  box-shadow: 0 2px 10px 0 rgba(255, 255, 255, 0.3);
+}

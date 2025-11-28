@@ -1,0 +1,17 @@
+@charset 'utf-8';
+.intro_wrap {
+  display: flex;
+}
+.intro_images {
+  aspect-ratio: 1;
+  border-radius: 20px;
+  margin: 0 auto;
+}
+.intro_images img {
+  background: #ccc;
+}
+@media (max-width: 770px) {
+.intro_images img {
+    width: 300px;
+  }
+}
