@@ -14,11 +14,12 @@
 }
 .package_card {
   position: relative;
-  border-radius: 20px;
   /* overflow: hidden; */
   aspect-ratio: 1;
   cursor: pointer;
-  background: var(--bs);
+}
+.package_card img {
+  border-radius: 20px;
 }
 .package_card::after {
   position: absolute;
@@ -52,6 +53,7 @@
   bottom: 0;
   background-color: rgba(255, 255, 255, 0);
   backdrop-filter: blur(0px);
+  border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;

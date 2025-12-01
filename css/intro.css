@@ -1,14 +1,14 @@
 @charset 'utf-8';
 .intro_wrap {
   display: flex;
+  justify-content: space-between;
 }
-.intro_images {
+/* .intro_images {
   aspect-ratio: 1;
-  border-radius: 20px;
-  margin: 0 auto;
-}
+} */
 .intro_images img {
-  background: #ccc;
+  width: 580px; height: 400px;
+  border-radius: 20px;
 }
 @media (max-width: 768px) {
 .intro_images img {
