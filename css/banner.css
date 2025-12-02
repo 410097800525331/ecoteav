@@ -1,4 +1,5 @@
 @charset 'utf-8';
+/* Slide */
 .slider {
   position: relative;
   width: 100%;
@@ -49,6 +50,7 @@
   color: var(--ts);
   margin-bottom: 30px;
 }
+/*  */
 .controls {
   position: absolute;
   bottom: 30px;

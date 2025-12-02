@@ -48,54 +48,6 @@
       </div>
     </div>
   </div>
-
-  <script>
-    let slideIndex = 0;
-    let isPlaying = true;
-    let autoPlayInterval;
-    const slides = document.getElementById('slides');
-    const counter = document.getElementById('counter');
-    const playPause = document.getElementById('playPause');
-    const totalSlides = 3;
-
-    function showSlide(n) {
-      if (n >= totalSlides) slideIndex = 0;
-      if (n < 0) slideIndex = totalSlides - 1;
-
-      slides.style.transform = `translateX(-${slideIndex * 100}%)`;
-      counter.textContent = `${slideIndex + 1} / ${totalSlides}`;
-    }
-
-    function moveSlide(n) {
-      slideIndex += n;
-      showSlide(slideIndex);
-    }
-
-    function togglePlay() {
-      isPlaying = !isPlaying;
-      if (isPlaying) {
-        playPause.textContent = '❚❚';
-        startAutoPlay();
-      } else {
-        playPause.textContent = '▶';
-        stopAutoPlay();
-      }
-    }
-
-    function startAutoPlay() {
-      autoPlayInterval = setInterval(() => {
-        slideIndex++;
-        showSlide(slideIndex);
-      }, 3500);
-    }
-
-    function stopAutoPlay() {
-      clearInterval(autoPlayInterval);
-    }
-
-    // 초기 자동 재생 시작
-    startAutoPlay();
-  </script>
   <!-- <script src="../../js/banner.js"></script> -->
 </body>
 
