@@ -5,21 +5,124 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>에코티브 - 브랜드굿즈제작, 티백OEM/ODM, 블렌딩티 개발, 향료 개발</title>
-  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="css/main.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
-  <div id="header" data-include-path="basic/include/header.html"></div>
-  <div id="banner" data-include-path="basic/include/banner.html"></div>
-  <div id="intro" data-include-path="basic/include/intro.html"></div>
-  <div id="package" data-include-path="basic/include/package.html"></div>
-  <div id="inquiry" data-include-path="basic/include/inquiry.html"></div>
-
-  
-  
-  <!-- 기업소개서 -->
-  <div class="down_bg">
+  <!-- ##### header ##### -->
+  <div id="header_wrap"></div>
+  <!-- ##### banner ##### -->
+  <div id="banner_wrap"></div>
+  <!-- ##### company ##### -->
+  <section id="company_wrap">
+    <div>
+      <div>
+        <h3>Company Introduction</h3>
+        <h2>에코티브</h2>
+      </div>
+      <p>
+        에코티브는 자연을 해치지 않는 방식으로 고품질의 차를 연구하고,<br>
+        고객 한 분 한 분의 건강한 라이프스타일에 꼭 맞는 한 잔을 제안하는 브랜드가 되겠습니다.
+      </p>
+      <a href="#" class="btn more_btn">Explore More</a>
+    </div>
+    <div class="intro_images">
+      <img src="assets/img/package_box.jpg" alt="이미지1">
+    </div>
+  </section>
+  <!-- ##### package ##### -->
+  <section id="package_wrap">
+      <div>
+        <h3>Package creation</h3>
+        <h2>패키지 제작</h2>
+      </div>
+      <div class="container">
+        <p>
+          고객의 브랜드 아이덴티티를 완벽하게 구현하는 패키지 제작 서비스를 제공합니다.<br>소량 주문부터 대량 생산까지, 기획·디자인·제작의 전 과정을 원스톱으로 지원해드립니다.
+        </p>
+        <a href="#" class="btn more_btn">Explore More</a>
+      </div>
+      <div class="package_item">
+        <div class="package_item_inner">
+          <div class="package_card">
+            <div>
+              <img src="assets/img/package_box.jpg" alt="패키지 삼방 이미지" class="package_image">
+              <div class="package_overlay">
+                <a href="#" class="btn view_btn">View Package</a>
+              </div>
+            </div>
+            <p>풀컬러 삼방</p>
+          </div>
+          <div class="package_card">
+            <div>
+              <img src="assets/img/package_box.jpg" alt="패키지 자동롤 이미지" class="package_image">
+              <div class="package_overlay">
+                <a href="#" class="btn view_btn">View Package</a>
+              </div>
+            </div>
+            <p>풀컬러 자동롤</p>
+          </div>
+          <div class="package_card">
+            <div>
+              <img src="assets/img/package_stand.jpg" alt="패키지 지퍼스탠드 이미지" class="package_image">
+              <div class="package_overlay">
+                <a href="#" class="btn view_btn">View Package</a>
+              </div>
+            </div>
+            <p>지퍼스탠드</p>
+          </div>
+          <div class="package_card">
+            <div>
+              <img src="assets/img/package_box.jpg" alt="패키지 단상자 이미지" class="package_image">
+              <div class="package_overlay">
+                <a href="#" class="btn view_btn">View Package</a>
+              </div>
+            </div>
+            <p>단상자</p>
+          </div>
+        </div>
+  </section>
+  <!-- ##### inquiry ##### -->
+  <section id="inquiry_wrap">
+    <div class="container">
+      <h2>빠른 상담 문의</h2>
+      <a href="#" class="btn more_btn">Explore More</a>
+    </div>
+    <div class="contact_inner">
+      <div class="contact_image">
+        <img src="assets/img/package_box.jpg" alt="화이트 톤의 깔끔한 사무실 책상">
+      </div>
+      <!-- form -->
+      <form class="contact_form" action="#" method="post">
+        <div class="form_row">
+          <div class="form_group">
+            <label for="name">이름<span class="red">*</span></label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form_group">
+            <label for="phone">연락처<span class="red">*</span></label>
+            <input type="tel" id="phone" name="phone" required>
+          </div>
+        </div>
+        <div class="form_row">
+          <div class="form_group">
+            <label for="email">이메일<span class="red">*</span></label>
+            <input type="email" id="email" name="email" required>
+          </div>
+        </div>
+        <div class="form_row">
+          <div class="form_group">
+            <label for="message">문의내용<span class="red">*</span></label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+        </div>
+        <button type="submit" class="btn_ basic_btn_b">문의하기</button>
+      </form>
+    </div>
+  </section>
+  <!-- ##### download ##### -->
+  <div class="download_wrap">
     <div class="downloads">
       <h3>Have a tea in mind?</h3>
       <h2>지속 가능한 성장을 함께<br>만드는 비즈니스 파트너입니다.</h2>
@@ -27,11 +130,13 @@
         aria-label="기업소개서 다운로드">기업소개서 다운로드</a>
     </div>
   </div>
-  <div id="footer" data-include-path="basic/include/footer.html"></div>
+    <!-- ##### fooyer ##### -->
+  <div id="footer_wrap"></div>
 
-  <!-- <script src="./js/banner.js"></script> -->
-  <!-- <script src="../../js/header.js"></script>
-  <script src="./js/include.js"></script> -->
+  <!-- include.js -->
+  <script src="js/include.js"></script>
+  <script src="js/banner.js"></script>
+  
 </body>
 
 </html>
