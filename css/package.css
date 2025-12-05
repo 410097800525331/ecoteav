@@ -22,6 +22,7 @@
 }
 .thumb_list li {
   flex: 1;
+  background: #ccc;
   cursor: pointer;
 }
 .thumb_list img {
@@ -46,33 +47,22 @@
   flex-direction: column;
   gap: 5px;
 }
-.option_group label {
-  font-size: 14px;
-  font-weight: 500;
-}
 .option_inner {
   display: flex;
-  justify-content: flex-start;
+  /* justify-content: flex-start; */
 }
 .option_inner label {
   width: 120px;
 }
 .option_group2  {
   padding: 10px 8px;
+  border: 1px solid ;
 }
 .option_inner > div:last-child {
   margin-left: auto;
 }
 .radio_list label {
   cursor: pointer;
-}
-.option_group select,
-.option_group input,
-.option_group input[type="file"],
-.option_group input[type="number"] {
-  padding: 8px;
-  border: 1px solid var(--grayc);
-  border-radius: 4px;
 }
 .option_group input[type="file"] {
   cursor: pointer;

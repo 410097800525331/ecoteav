@@ -1,58 +1,92 @@
 
 $(document).ready(function () {
   const type = $("#package_wrap").data("type");
-
-  // consultationData.js에서 해당 타입 object 가져오기
-  const data = consultation_contents[type];
+  const data = package_contents[type];
 
   if (!data) {
     console.error("잘못된 data-type 입니다.");
     return;
   }
 
-  const consultationTop = `
+  // const thumbIist = data.screenTypes.map(ele => `<img src="${ele}" alt="Screen Types">`).join('');
+
+  const package = `
     <div class="package_inner">
       <!-- 왼쪽: 상품 이미지 -->
       <div class="product_image">
         <div class="main_img">
-          <img src="/jfs/ecoteav/assets/imgs/stand1.jpg" alt="상품 이미지">
+          <img src="${data.mainImg}" alt="상품 이미지">
         </div>
         <ul class="thumb_list">
-          <li><img src="images/sample-thumb1.jpg" alt="썸네일 1"></li>
-          <li><img src="images/sample-thumb2.jpg" alt="썸네일 2"></li>
-          <li><img src="images/sample-thumb3.jpg" alt="썸네일 3"></li>
+          <li><img src="${data.thumbIist}" alt="상품 이미지 1"></li>
+          <li><img src="${data.thumbIist}" alt="상품 이미지 2"></li>
+          <li><img src="${data.thumbIist}" alt="상품 이미지 3"></li>
         </ul>
       </div>
       <!-- 가운데: 옵션 영역 -->
       <div class="product_options">
-        <h2 class="product_title">[소량제작 풀컬러] 단상자</h2>
+        <h2 class="product_title">[소량제작 풀컬러] 지퍼스탠드</h2>
         <div class="form_item">
           <label for="size">사이즈</label>
           <select id="size" required>
             <option value="">선택해주세요</option>
-            <option>130 x 110 + 55(티백 5개입 규격)</option>
-            <option>130 x 110 + 90(티백 10개입 규격)</option>
+            <option>150 x 215 + 80(20-30티백 규격)</option>
+            <option>200 x 265 + 10(40-50티백 규격)</option>
           </select>
         </div>
-        <div class="form_item">
-          <label for="size">원단</label>
-          <select id="size" required>
-            <option value="">선택해주세요</option>
-            <option>아이보리</option>
-            <option>로얄 아이보리</option>
-            <option>CCP</option>
-            <option>골판지</option>
-          </select>
+        <div class="option_group">
+          <label for="material">원단</label>
+          <input type="text" id="material" value="PET + VMPET + LLDPE" disabled>
         </div>
         <form class="option_group">
           <fieldset class="option_group2">
             <legend>후가공</legend>
             <div class="option_inner">
-              <label>?</label>
+              <label>지퍼</label>
               <ul class="radio_list">
-                <li><label><input type="radio" name="opt1" value="0"> 라미네이팅</label></li>
-                <li><label><input type="radio" name="opt1" value="0"> 금속박</label></li>
-                <li><label><input type="radio" name="opt1" value="0"> 형압</label></li>
+                <li><label><input type="radio" name="opt1" value="77000"> 있음</label></li>
+                <li><label><input type="radio" name="opt1" value="0"> 없음</label></li>
+              </ul>
+              <div>0원</div>
+            </div>
+            <div class="option_inner">
+              <label>코팅</label>
+              <ul class="radio_list">
+                <li><label><input type="radio" name="opt2" value="0"> 유광</label></li>
+                <li><label><input type="radio" name="opt2" value="55000"> 무광</label></li>
+              </ul>
+              <div>0원</div>
+            </div>
+            <div class="option_inner">
+              <label>걸이타공</label>
+              <ul class="radio_list">
+                <li><label><input type="radio" name="opt3" value="0"> 모자형</label></li>
+                <li><label><input type="radio" name="opt3" value="0"> 원형</label></li>
+                <li><label><input type="radio" name="opt3" value="0"> 없음</label></li>
+              </ul>
+              <div>0원</div>
+            </div>
+            <div class="option_inner">
+              <label>모서리</label>
+              <ul class="radio_list">
+                <li><label><input type="radio" name="opt4" value="0"> 직각</label></li>
+                <li><label><input type="radio" name="opt4" value="0"> 둥근</label></li>
+              </ul>
+              <div>0원</div>
+            </div>
+            <div class="option_inner">
+              <label>밸브부착</label>
+              <ul class="radio_list">
+                <li><label><input type="radio" name="opt5" value="146685"> 있음</label></li>
+                <li><label><input type="radio" name="opt5" value="0"> 없음</label></li>
+              </ul>
+              <div>0원</div>
+            </div>
+            <div class="option_inner">
+              <label>밑지컬러</label>
+              <ul class="radio_list">
+                <li><label><input type="radio" name="opt6" value="110000"> 있음</label></li>
+                <li><label><input type="radio" name="opt6" value="0"> 없음</label></li>
               </ul>
               <div>0원</div>
             </div>
@@ -84,7 +118,6 @@ $(document).ready(function () {
             </button>
           </div>
         </div>
-        <p>단상자 문의 010-0000-0000</p>
       </div>
       <!-- 오른쪽: 가격 및 결제 -->
       <div class="product_summary">
@@ -103,5 +136,5 @@ $(document).ready(function () {
     </div>
     `;
 
-  $("#consultation_wrap_s").append(consultationTop);
+  $("#package_wrap").append(package);
 });

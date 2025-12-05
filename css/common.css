@@ -60,6 +60,27 @@ a.line:hover {
 .red {
   color: red;
 }
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  width: 100%;
+}
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+select {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  width: 100%;
+}
 
 /* 버튼 */
 .btn {

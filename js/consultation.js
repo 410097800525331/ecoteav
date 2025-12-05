@@ -1,8 +1,6 @@
 // consultation_contents.forEach(consultation_content => {
 $(document).ready(function () {
   const type = $("#consultation_wrap_s").data("type");
-
-  // consultationData.js에서 해당 타입 object 가져오기
   const data = consultation_contents[type];
 
   if (!data) {
