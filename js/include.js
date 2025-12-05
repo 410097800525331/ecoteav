@@ -22,7 +22,7 @@ $(document).ready(function () {
               <a href="/basic/consultation_blending.html">상담/견적 신청</a>
               <ul class="sub">
                 <li><a href="/basic/consultation_blending.html">블렌딩티 상담신청</a></li>
-                <li><a href="/basic/consultation_blending.html">향료 상담신청</a></li>
+                <li><a href="/basic/consultation_fragrance.html">향료 상담신청</a></li>
                 <li><a href="/basic/consultation_visit.html">방문 상담신청</a></li>
               </ul>
             </li>
@@ -199,4 +199,56 @@ $(document).ready(function () {
   `;
 
   $("#footer_wrap").append(footer);
+});
+
+// header.js
+document.addEventListener("DOMContentLoaded", () => {
+  // mobile btn
+  const hamburgerBtn = document.getElementById("hamburger_btn");
+  const closeBtn = document.getElementById("close_btn");
+  const mobileNav = document.getElementById("mobile_nav");
+
+  if (hamburgerBtn) {
+    hamburgerBtn.addEventListener("click", () => {
+      mobileNav.style.right = "0px";
+      closeBtn.style.display = "flex";
+    });
+  }
+
+  if (closeBtn) {
+    closeBtn.addEventListener("click", () => {
+      mobileNav.style.right = "-300px";
+      closeBtn.style.display = "none";
+    });
+  }
+
+  // mobile menu accordion
+  const mobileBtns = document.querySelectorAll(".mobile_menu_btn");
+
+  mobileBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const submenu = btn.nextElementSibling;
+      const icon = btn.querySelector(".toggle_icon");
+      const isOpen = submenu.classList.contains("open");
+
+      if (isOpen) {
+        submenu.classList.remove("open");
+        icon.textContent = "+";
+        btn.classList.remove("active");
+      } else {
+        submenu.classList.add("open");
+        icon.textContent = "-";
+        btn.classList.add("active");
+      }
+    });
+  });
+
+  // header active class
+  $(window).scroll(function () {
+    if ($(window).scrollTop() > 0) {
+      $("#header").addClass("active");
+    } else {
+      $("#header").removeClass("active");
+    }
+  });
 });
