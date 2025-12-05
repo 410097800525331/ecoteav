@@ -1,17 +1,16 @@
-<!DOCTYPE html>
-<html lang="ko">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>에코티브 - 브랜드굿즈제작, 티백OEM/ODM, 블렌딩티 개발, 향료 개발</title>
-  <link rel="stylesheet" href="../css/main.css">
-  <link rel="stylesheet" href="../css/package.css">
-</head>
+$(document).ready(function () {
+  const type = $("#package_wrap").data("type");
 
-<body>
-  <div id="header_wrap"></div>
-  <section id="package_wrap" type="box">
+  // consultationData.js에서 해당 타입 object 가져오기
+  const data = consultation_contents[type];
+
+  if (!data) {
+    console.error("잘못된 data-type 입니다.");
+    return;
+  }
+
+  const consultationTop = `
     <div class="package_inner">
       <!-- 왼쪽: 상품 이미지 -->
       <div class="product_image">
@@ -102,13 +101,7 @@
         </div>
       </div>
     </div>
-  </section>
-    <!-- 상세 -->
-  <div id="package_info"></div>
-  <div id="footer_wrap"></div>
+    `;
 
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <script src="../js/include.js"></script>
-</body>
-
-</html>
+  $("#consultation_wrap_s").append(consultationTop);
+});

@@ -14,58 +14,35 @@
   <div id="consultation_wrap_s" data-type="visit"></div>
   <div id="consultation_wrap">
     <div class="form_wrap">
-      <!-- form 2 --><!-- <div class="form_group">
-          <div class="form_item">
-            <label>방문 희망 날짜 <span>*</span></label>
-            <input type="date" name="visit_date" required>
-          </div>
-          <div class="form_item">
-            <label>방문 희망 시간 <span>*</span></label>
-            <input type="time" name="visit_time" required>
-          </div>
+      <!-- form 2 -->
+      <div class="form_row">
+        <label class="form_label">방문 희망 날짜 <span class="red">*</span></label>
+        <div class="form_field">
+          <input type="date" name="visit_date" required>
         </div>
-        <div class="form_item">
-          <label>상담 구분 <span>*</span></label>
-          <div class="radio_group">
-            <label><input type="radio" name="category" value="OEM/ODM 상담" required> OEM/ODM 상담</label>
+      </div>
+      <div class="form_row">
+        <label class="form_label">방문 희망 시간 <span class="red">*</span></label>
+        <div class="form_field" name="concept" required>
+          <input type="time" name="visit_time" required>
+        </div>
+      </div>
+      <div class="form_row">
+        <label class="form_label">상담 구분 <span class="red">*</span></label>
+        <div class="form_field" name="concept" required>
+          <label><input type="radio" name="category" value="OEM/ODM 상담" required> OEM/ODM 상담</label>
             <label><input type="radio" name="category" value="티 제품 개발"> 티 제품 개발</label>
             <label><input type="radio" name="category" value="기타"> 기타</label>
-          </div>
         </div>
-        <div class="form_item">
-          <label>상담 요청 내용</label>
-          <textarea name="message" placeholder="상담받고자 하는 내용을 입력해주세요."></textarea>
-        </div> -->
-    <!-- form 2 -->
-    <div class="form_row">
-      <label class="form_label">상담 유형 <span class="red">*</span></label>
-      <div class="form_field">
-        <label><input type="checkbox" name="category" value="식품 향료 개발"> 식품 향료 개발</label>
-        <label><input type="checkbox" name="category" value="차(tea) 향료 개발"> 차(tea) 향료 개발</label>
-        <label><input type="checkbox" name="category" value="디퓨저 / 향수"> 디퓨저 / 향수</label>
-        <label><input type="checkbox" name="category" value="화장품 / 생활용품 향"> 화장품 / 생활용품 향</label>
-        <label><input type="checkbox" name="category" value="기타"> 기타</label>
       </div>
     </div>
-    <div class="form_row">
-      <label class="form_label">향료 컨셉 <span class="red">*</span></label>
-      <select class="form_field" name="concept" required>
-        <option value="">선택해주세요</option>
-        <option value="내추럴 (자연 유래 중심)">내추럴 (자연 유래 중심)</option>
-        <option value="프루티 / 플로럴">프루티 / 플로럴</option>
-        <option value="스위트 / 디저트 계열">스위트 / 디저트 계열</option>
-        <option value="허벌 / 스파이시">허벌 / 스파이시</option>
-        <option value="기타">기타</option>
-      </select>
-    </div>
-  </div>
-  <div id="consultation_wrap_e"></div>
-  <div id="footer_wrap"></div>
+    <div id="consultation_wrap_e"></div>
+    <div id="footer_wrap"></div>
 
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <script src="../js/include.js"></script>
-  <script src="../js/consultationData.js"></script>
-  <script src="../js/consultation.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="../js/include.js"></script>
+    <script src="../js/consultationData.js"></script>
+    <script src="../js/consultation.js"></script>
 </body>
 
 </html>

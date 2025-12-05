@@ -1,4 +1,4 @@
-const consultation_contents = {
+const package_contents = {
   blending: {
     title: 'OEM / ODM 상담 신청',
     subPost: '당신이 원하는 茶는 무엇입니까?<br>Tea 상품 제작 의도를 파악하고, 최상의 기획과 효율적인 예산 활용을 돕기 위한 자료로 활용됩니다.',
