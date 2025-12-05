@@ -128,8 +128,8 @@ $(document).ready(function () {
           <p><strong>최종결제금액</strong> <span id="total_price">0원</span></p>
         </div>
         <div class="btn_area">
-          <button type="button" class="btnB">장바구니 담기</button>
-          <button type="button" class="btn1">구매하기</button>
+          <button type="button" class="btn_ basic_btn_w">장바구니 담기</button>
+          <button type="button" class="btn_ basic_btn_b">구매하기</button>
           <!-- <button type="button" class="btn_buy">견적인쇄하기</button> 추후 업데이트-->
         </div>
       </div>

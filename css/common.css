@@ -111,7 +111,7 @@ select {
   width: 100%;
   padding: 16px 40px;
   border-radius: 8px;
-  margin: 10px 0;
+  margin: 4px 0;
   text-align: center;
   cursor: pointer;
   transition: all 0.3s;
@@ -119,6 +119,7 @@ select {
 .basic_btn_w {
   background: #fff;
   color: var(--tm);
+  border: 1px solid var(--tm);
 }
 .basic_btn_b {
   background: var(--tm);

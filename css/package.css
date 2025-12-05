@@ -56,7 +56,7 @@
 }
 .option_group2  {
   padding: 10px 8px;
-  border: 1px solid ;
+  border: 1px solid var(--ts);
 }
 .option_inner > div:last-child {
   margin-left: auto;
