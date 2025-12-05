@@ -18,6 +18,7 @@ h2 {
   font-size: 3.8rem;
   font-weight: 600;
   line-height: 1.4;
+  letter-spacing: -2px;
 }
 h3 {
   color: var(--ts);
@@ -52,6 +53,9 @@ a {
   justify-content: space-between;
   align-items: center;
 }
+a.line:hover {
+  text-decoration: underline;
+}
 .red {
   color: red;
 }
@@ -82,7 +86,8 @@ a {
 }
 
 .btn_ {
-  padding: 10px 40px;
+  width: 100%;
+  padding: 16px 40px;
   border-radius: 8px;
   margin: 10px 0;
   text-align: center;

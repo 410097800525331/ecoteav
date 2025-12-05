@@ -44,10 +44,6 @@ input {
   border: none;
   outline: none;
 }
-::placeholder {
-  color: #fff;
-  font-size: 1rem;
-}
 address {
   font-style: normal;
 }

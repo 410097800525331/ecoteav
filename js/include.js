@@ -1,18 +1,19 @@
+
 $(document).ready(function () {
   // header
   const header = `
     <header id="header">
       <div class="inner">
         <!-- logo -->
-        <h1 id="logo"><a href="index.html"><img src="./assets/img/ecoteav_logo.png" alt="에코티브 로고"></a></h1>
+        <h1 id="logo"><a href="/index.html"><img src="/assets/img/ecoteav_logo.png" alt="에코티브 로고"></a></h1>
 
         <!-- main menu -->
         <nav id="gnb">
           <ul class="main">
             <li>
-              <a href="compan/company.html">기업소개</a>
+              <a href="/company_company.html">기업소개</a>
               <ul class="sub">
-                <li><a href="compan/company.html">기업소개/CI</a></li>
+                <li><a href="/company_company.html">기업소개/CI</a></li>
                 <li><a href="#">연혁</a></li>
                 <li><a href="#">오시는길</a></li>
               </ul>
@@ -20,9 +21,9 @@ $(document).ready(function () {
             <li>
               <a href="#">상담/견적 신청</a>
               <ul class="sub">
-                <li><a href="#">블렌딩티 상담신청</a></li>
-                <li><a href="#">향료 상담신청</a></li>
-                <li><a href="#">방문 상담신청</a></li>
+                <li><a href="/basic/consultation_blending.html">블렌딩티 상담신청</a></li>
+                <li><a href="/basic/consultation_blending.html">향료 상담신청</a></li>
+                <li><a href="/basic/consultation_visit.html">방문 상담신청</a></li>
               </ul>
             </li>
             <li>
@@ -156,7 +157,7 @@ $(document).ready(function () {
     <div class="inner">
       <!-- footer left -->
       <div class="footer_left">
-        <h2 class="logo"><img src="./assets/img/ecoteav_logo_white.png" alt="에코티브 로고"></h2>
+        <h1 id="logo"><img src="/assets/img/ecoteav_logo_white.png" alt="에코티브 로고"></h1>
         <ul class="menu">
           <li><a href="#">회사소개</a></li>
           <li><a href="#">오시는길</a></li>
@@ -185,7 +186,7 @@ $(document).ready(function () {
       <div class="footer_right">
         <p class="msg">고객과 함께 성장하고 협력하며<br>더 나은 미래를 향해 나아가겠습니다.</p>
         <form class="footer_form">
-          <div class="form_row">
+          <div class="footer_row">
             <input type="text" placeholder="이름" required>
             <input type="text" placeholder="연락처" required>
           </div>

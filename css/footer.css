@@ -4,6 +4,7 @@
   color: #fff;
   padding: 80px 0;
   font-size: 1.3rem;
+  margin-top: 80px;
 }
 #footer .inner {
   display: flex;
@@ -65,7 +66,7 @@
   flex-direction: column;
   gap: 15px;
 }
-.form_row {
+.footer_row {
   display: flex;
   gap: 15px;
 }
