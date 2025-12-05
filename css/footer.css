@@ -30,9 +30,6 @@
 .menu a {
   color: #fff;
 }
-.menu a:hover {
-  text-decoration: underline;
-}
 /* footer info */
 .info {
   font-style: normal;

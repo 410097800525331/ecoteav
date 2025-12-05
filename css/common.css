@@ -45,6 +45,7 @@ section {
 }
 a {
   color: var(--tm);
+  cursor: pointer;
 }
 
 /*  */

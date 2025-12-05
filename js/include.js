@@ -11,15 +11,15 @@ $(document).ready(function () {
         <nav id="gnb">
           <ul class="main">
             <li>
-              <a href="/company_company.html">기업소개</a>
+              <a href="/basic/company_company_ci.html">기업소개</a>
               <ul class="sub">
-                <li><a href="/company_company.html">기업소개/CI</a></li>
-                <li><a href="#">연혁</a></li>
-                <li><a href="#">오시는길</a></li>
+                <li><a href="/basic/company_company_ci.html">기업소개/CI</a></li>
+                <li><a href="/basic/company_history.html">연혁</a></li>
+                <li><a href="/basic/company_location.html">오시는길</a></li>
               </ul>
             </li>
             <li>
-              <a href="#">상담/견적 신청</a>
+              <a href="/basic/consultation_blending.html">상담/견적 신청</a>
               <ul class="sub">
                 <li><a href="/basic/consultation_blending.html">블렌딩티 상담신청</a></li>
                 <li><a href="/basic/consultation_blending.html">향료 상담신청</a></li>
@@ -27,40 +27,40 @@ $(document).ready(function () {
               </ul>
             </li>
             <li>
-              <a href="#">OEM/ODM</a>
+              <a href="/basic/">OEM/ODM</a>
               <ul class="sub">
-                <li><a href="#">프로세스</a></li>
-                <li><a href="#">협력사</a></li>
-                <li><a href="#">포트폴리오</a></li>
-                <li><a href="#">B2B 결제</a></li>
+                <li><a href="/basic/oem_process">프로세스</a></li>
+                <li><a href="/basic/oem_partners">협력사</a></li>
+                <li><a href="/basic/oem_portfolio">포트폴리오</a></li>
+                <li><a href="/basic/oem_b2b_private">B2B 결제</a></li>
               </ul>
             </li>
             <li>
-              <a href="#">패키지 제작</a>
+              <a href="/basic/package_three_side">패키지 제작</a>
               <ul class="sub">
-                <li><a href="#">풀컬러 삼방</a></li>
-                <li><a href="#">풀컬러 자동롤</a></li>
-                <li><a href="#">지퍼스탠드</a></li>
-                <li><a href="#">단상자</a></li>
-                <li><a href="#">칼선 다운로드</a></li>
+                <li><a href="/basic/package_three_side">풀컬러 삼방</a></li>
+                <li><a href="/basic/package_roll.html">풀컬러 자동롤</a></li>
+                <li><a href="/basic/package_pouch.html">지퍼스탠드</a></li>
+                <li><a href="/basic/package_box.html">단상자</a></li>
+                <li><a href="/basic/package_download.html">칼선 다운로드</a></li>
               </ul>
             </li>
             <li>
-              <a href="#">취급원료(Shop)</a>
+              <a href="/basic/shop_herb_black_tea.html">취급원료(Shop)</a>
               <ul class="sub">
-                <li><a href="#">허브/홍차</a></li>
-                <li><a href="#">국내산 원료</a></li>
-                <li><a href="#">시그니쳐 향료</a></li>
-                <li><a href="#">샘플 신청</a></li>
+                <li><a href="/basic/shop_herb_black_tea.html">허브/홍차</a></li>
+                <li><a href="/basic/shop_korean_ingredient.html">국내산 원료</a></li>
+                <li><a href="/basic/shop_flavor.html">시그니쳐 향료</a></li>
+                <li><a href="/basic/shop_sample_request.html">샘플 신청</a></li>
               </ul>
             </li>
             <li>
-              <a href="#">문의하기</a>
+              <a href="/basic/">문의하기</a>
               <ul class="sub">
-                <li><a href="#">1:1 문의하기</a></li>
-                <li><a href="#">협업 문의하기</a></li>
-                <li><a href="#">패키지 문의하기</a></li>
-                <li><a href="#">자주 묻는 질문</a></li>
+                <li><a href="/basic/inquiry_inquiry.html">1:1 문의하기</a></li>
+                <li><a href="/basic/inquiry_collaboration.html">협업 문의하기</a></li>
+                <li><a href="/basic/inquiry_package_inquiry.html">패키지 문의하기</a></li>
+                <li><a href="/basic/inquiry_faq.html">자주 묻는 질문</a></li>
               </ul>
             </li>
           </ul>
@@ -93,56 +93,56 @@ $(document).ready(function () {
 
       <ul id="mobile_main">
         <li>
-          <a href="#" class="mobile_main_menu">기업소개<span class="toggle_icon">+</span></a>
+          <div class="mobile_main_menu">기업소개<span class="toggle_icon">+</span></div>
           <ul class="mobile_sub">
-            <li><a href="#">회사소개/CI</a></li>
-            <li><a href="#">연혁</a></li>
-            <li><a href="#">오시는길</a></li>
+            <li><a href="/basic/company_company_ci.html">기업소개/CI</a></li>
+            <li><a href="/basic/company_history.html">연혁</a></li>
+            <li><a href="/basic/company_location.html">오시는길</a></li>
           </ul>
         </li>
         <li>
-          <a href="#" class="mobile_main_menu">상담/견적 신청<span class="toggle_icon">+</span></a>
+          <div class="mobile_main_menu">상담/견적 신청<span class="toggle_icon">+</span></div>
           <ul class="mobile_sub">
-            <li><a href="#">블렌딩티 상담신청</a></li>
-            <li><a href="#">향료 상담신청</a></li>
-            <li><a href="#">방문 상담신청</a></li>
+            <li><a href="/basic/consultation_blending.html">블렌딩티 상담신청</a></li>
+            <li><a href="/basic/consultation_blending.html">향료 상담신청</a></li>
+            <li><a href="/basic/consultation_visit.html">방문 상담신청</a></li>
           </ul>
         </li>
         <li>
-          <a href="#" class="mobile_main_menu">OEM/ODM<span class="toggle_icon">+</span></a>
+          <div class="mobile_main_menu">OEM/ODM<span class="toggle_icon">+</span></div>
           <ul class="mobile_sub">
-            <li><a href="#">프로세스</a></li>
-            <li><a href="#">협력사</a></li>
-            <li><a href="#">포트폴리오</a></li>
-            <li><a href="#">B2B 결제</a></li>
+            <li><a href="/basic/oem_process">프로세스</a></li>
+            <li><a href="/basic/oem_partners">협력사</a></li>
+            <li><a href="/basic/oem_portfolio">포트폴리오</a></li>
+            <li><a href="/basic/oem_b2b_private">B2B 결제</a></li>
           </ul>
         </li>
         <li>
-          <a href="#" class="mobile_main_menu">패키지 제작<span class="toggle_icon">+</span></a>
+          <div class="mobile_main_menu">패키지 제작<span class="toggle_icon">+</span></div>
           <ul class="mobile_sub">
-            <li><a href="#">풀컬러 삼방</a></li>
-            <li><a href="#">풀컬러 자동롤</a></li>
-            <li><a href="#">지퍼스탠드</a></li>
-            <li><a href="#">단상자</a></li>
-            <li><a href="#">칼선 다운로드</a></li>
+            <li><a href="/basic/package_three_side">풀컬러 삼방</a></li>
+            <li><a href="/basic/package_roll.html">풀컬러 자동롤</a></li>
+            <li><a href="/basic/package_pouch.html">지퍼스탠드</a></li>
+            <li><a href="/basic/package_box.html">단상자</a></li>
+            <li><a href="/basic/package_download.html">칼선 다운로드</a></li>
           </ul>
         </li>
         <li>
-          <a href="#" class="mobile_main_menu">취급원료(Shop)<span class="toggle_icon">+</span></a>
+          <div class="mobile_main_menu">취급원료(Shop)<span class="toggle_icon">+</span></div>
           <ul class="mobile_sub">
-            <li><a href="#">허브/홍차</a></li>
-            <li><a href="#">국내산 원료</a></li>
-            <li><a href="#">시그니쳐 향료</a></li>
-            <li><a href="#">샘플 신청</a></li>
+            <li><a href="/basic/shop_herb_black_tea.html">허브/홍차</a></li>
+            <li><a href="/basic/shop_korean_ingredient.html">국내산 원료</a></li>
+            <li><a href="/basic/shop_flavor.html">시그니쳐 향료</a></li>
+            <li><a href="/basic/shop_sample_request.html">샘플 신청</a></li>
           </ul>
         </li>
         <li>
-          <a href="#" class="mobile_main_menu">문의하기<span class="toggle_icon">+</span></a>
+          <div class="mobile_main_menu">문의하기<span class="toggle_icon">+</span></div>
           <ul class="mobile_sub">
-            <li><a href="#">1:1 문의하기</a></li>
-            <li><a href="#">협업 문의하기</a></li>
-            <li><a href="#">패키지 문의하기</a></li>
-            <li><a href="#">자주 묻는 질문</a></li>
+            <li><a href="/basic/inquiry_inquiry.html">1:1 문의하기</a></li>
+            <li><a href="/basic/inquiry_collaboration.html">협업 문의하기</a></li>
+            <li><a href="/basic/inquiry_package_inquiry.html">패키지 문의하기</a></li>
+            <li><a href="/basic/inquiry_faq.html">자주 묻는 질문</a></li>
           </ul>
         </li>
       </ul>
@@ -159,15 +159,15 @@ $(document).ready(function () {
       <div class="footer_left">
         <h1 id="logo"><img src="/assets/img/ecoteav_logo_white.png" alt="에코티브 로고"></h1>
         <ul class="menu">
-          <li><a href="#">회사소개</a></li>
-          <li><a href="#">오시는길</a></li>
-          <li><a href="#">개인정보취급방침</a></li>
-          <li><a href="#">이용약관</a></li>
+          <li><a class="line href="/basic/company_company_ci.html">회사소개</a></li>
+          <li><a class="line href="/basic/company_location.html">오시는길</a></li>
+          <li><a class="line href="#">개인정보취급방침</a></li>
+          <li><a class="line href="#">이용약관</a></li>
         </ul>
         <!-- info -->
         <address class="info">
           <div>상호명 : 에코티브(ecoteav) &nbsp; 대표자 : 김아영 &nbsp; 이메일 : ecoteav@gmail.com</div>
-          <div>주소 : 06609 서울특별시 서초구 서운로 26길 5 토탈에코빌딩 B1</div>
+          <address>주소 : 06609 서울특별시 서초구 서운로 26길 5 토탈에코빌딩 B1</address>
           <div>사업자등록번호 : 296-19-02426 &nbsp; 통신판매업신고번호 : 235-47-67891</div>
           <div>평일 09:00~18:00 &nbsp; 주말 및 공휴일 휴무</div>
           <div>국민 000000-00-000000 &nbsp; 예금주 : 에코티브(ecoteav)</div>
