@@ -8,7 +8,7 @@ $(document).ready(function () {
     return;
   }
 
-  // const thumbIist = data.screenTypes.map(ele => `<img src="${ele}" alt="Screen Types">`).join('');
+  // const thumbIist = data.thumbIist.map(ele => `<img src="${ele}" alt="Screen Types">`).join('');
 
   const package = `
     <div class="package_inner">
@@ -25,7 +25,7 @@ $(document).ready(function () {
       </div>
       <!-- 가운데: 옵션 영역 -->
       <div class="product_options">
-        <h2 class="product_title">[소량제작 풀컬러] 지퍼스탠드</h2>
+        <h2 class="product_title">[소량제작 풀컬러] ${data.title}</h2>
         <div class="form_item">
           <label for="size">사이즈</label>
           <select id="size" required>
@@ -136,5 +136,5 @@ $(document).ready(function () {
     </div>
     `;
 
-  $("#package_wrap").append(package);
+  $("#package_wrap_s").append(package);
 });

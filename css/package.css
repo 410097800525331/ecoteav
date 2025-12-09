@@ -5,7 +5,6 @@
   display: flex;
   gap: 40px;
   max-width: 1400px;
-  margin: 80px auto;
 }
 .product_image {
   flex: 1 1 35%;
@@ -46,6 +45,7 @@
   display: flex;
   flex-direction: column;
   gap: 5px;
+  color: var(--ts);
 }
 .option_inner {
   display: flex;
@@ -56,7 +56,7 @@
 }
 .option_group2  {
   padding: 10px 8px;
-  border: 1px solid var(--ts);
+  border: 1px solid var(--bs);
 }
 .option_inner > div:last-child {
   margin-left: auto;
