@@ -13,7 +13,7 @@ $(document).ready(function () {
             <li>
               <a href="#">기업소개</a>
               <ul class="sub">
-                <li><a href="/basic/company_company_ci.html">기업소개/CI</a></li>
+                <li><a href="/basic/company_about_ci.html">기업소개/CI</a></li>
                 <li><a href="/basic/company_history.html">연혁</a></li>
                 <li><a href="/basic/company_location.html">오시는길</a></li>
               </ul>
@@ -29,16 +29,16 @@ $(document).ready(function () {
             <li>
               <a href="#">OEM/ODM</a>
               <ul class="sub">
-                <li><a href="/basic/oem_process">프로세스</a></li>
-                <li><a href="/basic/oem_partners">협력사</a></li>
-                <li><a href="/basic/oem_portfolio">포트폴리오</a></li>
-                <li><a href="/basic/oem_b2b_private">B2B 결제</a></li>
+                <li><a href="/basic/oem_process.html">프로세스</a></li>
+                <li><a href="/basic/oem_partners.html">협력사</a></li>
+                <li><a href="/basic/oem_portfolio.html">포트폴리오</a></li>
+                <li><a href="/basic/oem_b2b_private.html">B2B 결제</a></li>
               </ul>
             </li>
             <li>
               <a href="#">패키지 제작</a>
               <ul class="sub">
-                <li><a href="/basic/package_three_side">풀컬러 삼방</a></li>
+                <li><a href="/basic/package_three_side.html">풀컬러 삼방</a></li>
                 <li><a href="/basic/package_roll.html">풀컬러 자동롤</a></li>
                 <li><a href="/basic/package_pouch.html">지퍼스탠드</a></li>
                 <li><a href="/basic/package_box.html">단상자</a></li>
