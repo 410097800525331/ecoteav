@@ -68,9 +68,9 @@ $(document).ready(function () {
 
         <!-- user menu -->
         <div class="user_menu">
-          <a href="#">로그인</a>
-          <a href="#">회원가입</a>
-          <a href="#">내 정보</a>
+          <a href="/basic/user_login.html">로그인</a>
+          <a href="/basic/user_join.html">회원가입</a>
+          <a href="/basic/user_mypage.html">내 정보</a>
         </div>
 
         <!-- mobile btn -->
@@ -86,9 +86,9 @@ $(document).ready(function () {
     <!-- mobile menu -->
     <nav id="mobile_gnb">
       <div class="mobile_user_menu">
-        <a href="#">로그인</a>
-        <a href="#">회원가입</a>
-        <a href="#">내 정보</a>
+        <a href="/basic/user_login.html">로그인</a>
+        <a href="/basic/user_join.html">회원가입</a>
+        <a href="/basic/user_mypage.html">내 정보</a>
       </div>
 
       <ul id="mobile_main">

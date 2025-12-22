@@ -1,6 +1,4 @@
 
-
-
 const accButtons = document.querySelectorAll(".accordion_btn");
 
 accButtons.forEach((btn) => {
