@@ -1,6 +1,9 @@
 @charset 'utf-8';
 
-/* login */
+/* login, join */
+section {
+  margin-top: 140px;
+}
 .form_wrap {
   max-width: 1000px;
   margin: 0 auto;
@@ -38,23 +41,27 @@ form {
 .form_field>input:hover {
   border-bottom: 1px solid var(--ts);
 }
-.form_field label {
-  cursor: pointer;
-}
-.form_row textarea {
-  width: 100%;
-  height: 140px;
-  padding: 15px;
-  border: 1px solid var(--bs);
-  border-radius: 12px;
-  resize: none;
-}
-.privacy {
-  padding: 15px;
-  border-radius: 6px;
+.login_option {
+  justify-content: space-between;
   font-size: 1.2rem;
-  background: var(--bm);
-  margin-bottom: 20px;
+  margin-top: 10px;
+}
+.login_links span {
+  margin: 0 6px;
+  color: #ccc;
+}
+.login_join {
+  margin-top: 30px;
+  text-align: center;
+}
+.login_join a {
+  display: inline-block;
+  margin-top: 6px;
+  font-weight: 600;
+  color: var(--tm);
+}
+.basic_btn_b {
+  margin-top: 30px;
 }
 @media (max-width: 1024px) {
   .form_row label {
@@ -76,73 +83,8 @@ form {
     width: 100%;
   }
 }
-#signup_wrap {
-  margin-top: 140px;
-}
-
-
-
-
-
-
-
-
-
-#login_wrap {
-  margin-top: 140px;
-}
-
-.login_option {
-  justify-content: space-between;
-  font-size: 1.2rem;
-  margin-top: 10px;
-}
-
-.login_links a {
+/* my page */
+.basic_btn_w {
+  border: 1px solid var(--bs);
   color: var(--ts);
-  font-size: 1.2rem;
-}
-
-.login_links span {
-  margin: 0 6px;
-  color: #ccc;
-}
-
-.login_join {
-  margin-top: 30px;
-  text-align: center;
-  font-size: 1.2rem;
-}
-
-.login_join a {
-  display: inline-block;
-  margin-top: 6px;
-  color: var(--tm);
-  font-weight: 600;
-}
-
-
-/* join */
-
-.form_wrap h2 {
-  margin-top: 10px;
-}
-
-.container p {
-  font-size: 1.2rem;
-  color: var(--ts);
-}
-
-.red {
-  color: #c33;
-}
-
-/* input 통일감 */
-.form_field input {
-  background: transparent;
-}
-
-/* 버튼 이미 쓰는 스타일 그대로 */
-.basic_btn_b {
-  margin-top: 30px;
 }

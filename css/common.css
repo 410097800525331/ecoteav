@@ -63,6 +63,7 @@ a.line:hover {
 input[type="text"],
 input[type="email"],
 input[type="tel"],
+input[type="password"],
 textarea {
   padding: 12px;
   border: 1px solid #ccc;
