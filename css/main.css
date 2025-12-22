@@ -26,6 +26,15 @@
   background: #ccc;
   padding: 0 120px;
 }
+/* .slide:nth-child(1) {
+  background: url(/assets/img/main/slide1.png) no-repeat 0 0;
+}
+.slide:nth-child(2) {
+  background: url(/assets/img/main/slide2.png) no-repeat 0 0;
+}
+.slide:nth-child(3) {
+  background: url(/assets/img/main/slide3.png) no-repeat 0 0;
+} */
 .slide_content {
   max-width: 500px;
   z-index: 2;
