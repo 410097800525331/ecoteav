@@ -1,9 +1,6 @@
 @charset 'utf-8';
 
 /* login, join */
-section {
-  margin-top: 140px;
-}
 .form_wrap {
   max-width: 1000px;
   margin: 0 auto;
