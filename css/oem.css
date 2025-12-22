@@ -45,6 +45,9 @@
   .package_grid {
     grid-template-columns: 1fr;
   }
+  .image_two img:last-child {
+    display: none;
+  }
 }
 
 /* 협력사 */

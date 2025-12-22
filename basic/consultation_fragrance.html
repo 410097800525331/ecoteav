@@ -11,35 +11,38 @@
 
 <body>
   <div id="header_wrap"></div>
-  <div id="consultation_wrap_s" data-type="flavor"></div>
-  <div id="consultation_wrap">
-    <div class="form_wrap">
-      <!-- form 2 -->
-      <div class="form_row">
-        <label class="form_label">상담 유형 <span class="red">*</span></label>
-        <div class="form_field">
-          <label><input type="checkbox" name="category" value="식품 향료 개발"> 식품 향료 개발</label>
-          <label><input type="checkbox" name="category" value="차(tea) 향료 개발"> 차(tea) 향료 개발</label>
-          <label><input type="checkbox" name="category" value="디퓨저 / 향수"> 디퓨저 / 향수</label>
-          <label><input type="checkbox" name="category" value="화장품 / 생활용품 향"> 화장품 / 생활용품 향</label>
-          <label><input type="checkbox" name="category" value="기타"> 기타</label>
+  <section>
+    <div id="consultation_wrap_s" data-type="flavor"></div>
+    <div id="consultation_wrap">
+      <div class="form_wrap">
+        <!-- form 2 -->
+        <div class="form_row">
+          <label class="form_label">상담 유형 <span class="red">*</span></label>
+          <div class="form_field">
+            <label><input type="checkbox" name="category" value="식품 향료 개발"> 식품 향료 개발</label>
+            <label><input type="checkbox" name="category" value="차(tea) 향료 개발"> 차(tea) 향료 개발</label>
+            <label><input type="checkbox" name="category" value="디퓨저 / 향수"> 디퓨저 / 향수</label>
+            <label><input type="checkbox" name="category" value="화장품 / 생활용품 향"> 화장품 / 생활용품 향</label>
+            <label><input type="checkbox" name="category" value="기타"> 기타</label>
+          </div>
+        </div>
+        <div class="form_row">
+          <label class="form_label">향료 컨셉 <span class="red">*</span></label>
+          <select class="form_field" name="concept" required>
+            <option value="">선택해주세요</option>
+            <option value="내추럴 (자연 유래 중심)">내추럴 (자연 유래 중심)</option>
+            <option value="프루티 / 플로럴">프루티 / 플로럴</option>
+            <option value="스위트 / 디저트 계열">스위트 / 디저트 계열</option>
+            <option value="허벌 / 스파이시">허벌 / 스파이시</option>
+            <option value="기타">기타</option>
+          </select>
         </div>
       </div>
-      <div class="form_row">
-        <label class="form_label">향료 컨셉 <span class="red">*</span></label>
-        <select class="form_field" name="concept" required>
-          <option value="">선택해주세요</option>
-          <option value="내추럴 (자연 유래 중심)">내추럴 (자연 유래 중심)</option>
-          <option value="프루티 / 플로럴">프루티 / 플로럴</option>
-          <option value="스위트 / 디저트 계열">스위트 / 디저트 계열</option>
-          <option value="허벌 / 스파이시">허벌 / 스파이시</option>
-          <option value="기타">기타</option>
-        </select>
-      </div>
     </div>
-  </div>
-  <div id="consultation_wrap_e"></div>
-
+    <div id="consultation_wrap_e"></div>
+  </section>
+  <div id="footer_wrap"></div>
+  
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="../js/include.js"></script>
   <script src="../js/consultationData.js"></script>

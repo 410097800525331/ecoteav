@@ -67,6 +67,9 @@ form {
   .form_field label {
     font-size: 1.2rem;
   }
+  .form_wrap .container {
+    align-items: flex-start;
+  }
 }
 @media (max-width: 768px) {
   .form_row {

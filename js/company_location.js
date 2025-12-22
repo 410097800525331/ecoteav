@@ -9,7 +9,7 @@ location_content.forEach(location_content => {
       <div class="map_wrap">
         <iframe
           src=${location_content.map}
-          width="1400" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+          style="border:0;" allowfullscreen="" loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
       <hr>

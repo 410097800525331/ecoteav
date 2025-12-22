@@ -77,9 +77,6 @@ $(document).ready(function () {
         <div id="mobile_btn">
           <span></span><span></span><span></span>
         </div>
-
-        <!-- mobile X btn -->
-        <div id="close_btn">×</div>
       </div>
     </header>
 
@@ -95,7 +92,7 @@ $(document).ready(function () {
         <li>
           <div class="mobile_main_menu">기업소개<span class="toggle_icon">+</span></div>
           <ul class="mobile_sub">
-            <li><a href="/basic/company_company_ci.html">기업소개/CI</a></li>
+            <li><a href="/basic/company_about_ci.html">기업소개/CI</a></li>
             <li><a href="/basic/company_history.html">연혁</a></li>
             <li><a href="/basic/company_location.html">오시는길</a></li>
           </ul>
@@ -111,16 +108,16 @@ $(document).ready(function () {
         <li>
           <div class="mobile_main_menu">OEM/ODM<span class="toggle_icon">+</span></div>
           <ul class="mobile_sub">
-            <li><a href="/basic/oem_process">프로세스</a></li>
-            <li><a href="/basic/oem_partners">협력사</a></li>
-            <li><a href="/basic/oem_portfolio">포트폴리오</a></li>
-            <li><a href="/basic/oem_b2b_private">B2B 결제</a></li>
+            <li><a href="/basic/oem_process.html">프로세스</a></li>
+            <li><a href="/basic/oem_partners.html">협력사</a></li>
+            <li><a href="/basic/oem_portfolio.html">포트폴리오</a></li>
+            <li><a href="/basic/oem_b2b_private.html">B2B 결제</a></li>
           </ul>
         </li>
         <li>
           <div class="mobile_main_menu">패키지 제작<span class="toggle_icon">+</span></div>
           <ul class="mobile_sub">
-            <li><a href="/basic/package_three_side">풀컬러 삼방</a></li>
+            <li><a href="/basic/package_three_side.html">풀컬러 삼방</a></li>
             <li><a href="/basic/package_roll.html">풀컬러 자동롤</a></li>
             <li><a href="/basic/package_pouch.html">지퍼스탠드</a></li>
             <li><a href="/basic/package_box.html">단상자</a></li>
@@ -159,10 +156,10 @@ $(document).ready(function () {
       <div class="footer_left">
         <h1 id="logo"><img src="/assets/img/ecoteav_logo_white.png" alt="에코티브 로고"></h1>
         <ul class="menu">
-          <li><a class="line href="/basic/company_company_ci.html">회사소개</a></li>
-          <li><a class="line href="/basic/company_location.html">오시는길</a></li>
-          <li><a class="line href="#">개인정보취급방침</a></li>
-          <li><a class="line href="#">이용약관</a></li>
+          <li><a class="line" href="/basic/company_company_ci.html">회사소개</a></li>
+          <li><a class="line" href="/basic/company_location.html">오시는길</a></li>
+          <li><a class="line" href="#">개인정보취급방침</a></li>
+          <li><a class="line" href="#">이용약관</a></li>
         </ul>
         <!-- info -->
         <address class="info">
@@ -201,54 +198,38 @@ $(document).ready(function () {
   $("#footer_wrap").append(footer);
 });
 
-// header.js
-document.addEventListener("DOMContentLoaded", () => {
-  // mobile btn
-  const hamburgerBtn = document.getElementById("hamburger_btn");
-  const closeBtn = document.getElementById("close_btn");
-  const mobileNav = document.getElementById("mobile_nav");
+// mobile_btn
+$(document).on("click", "#mobile_btn", function () {
+  if (window.innerWidth > 1024) return;
 
-  if (hamburgerBtn) {
-    hamburgerBtn.addEventListener("click", () => {
-      mobileNav.style.right = "0px";
-      closeBtn.style.display = "flex";
-    });
+  $(this).toggleClass("active");
+  $("#mobile_gnb").toggleClass("open");
+  $("body").css("overflow",
+    $("#mobile_gnb").hasClass("open") ? "hidden" : ""
+  );
+});
+
+$(document).on("click", ".mobile_main_menu", function () {
+  const $sub = $(this).next(".mobile_sub");
+  const $icon = $(this).find(".toggle_icon");
+
+  $sub.toggleClass("open");
+  $(this).toggleClass("active");
+  $icon.text($sub.hasClass("open") ? "−" : "+");
+});
+
+// scroll
+$(window).on("scroll", function () {
+  if (window.innerWidth <= 1024) return;
+  $("#header").toggleClass("active", $(window).scrollTop() > 0);
+});
+
+$(window).on("resize", function () {
+  if (window.innerWidth > 1024) {
+    $("#mobile_gnb").removeClass("open");
+    $("#mobile_btn").removeClass("active");
+    $(".mobile_sub").removeClass("open");
+    $(".toggle_icon").text("+");
+    $("body").css("overflow", "");
   }
-
-  if (closeBtn) {
-    closeBtn.addEventListener("click", () => {
-      mobileNav.style.right = "-300px";
-      closeBtn.style.display = "none";
-    });
-  }
-
-  // mobile menu accordion
-  const mobileBtns = document.querySelectorAll(".mobile_menu_btn");
-
-  mobileBtns.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const submenu = btn.nextElementSibling;
-      const icon = btn.querySelector(".toggle_icon");
-      const isOpen = submenu.classList.contains("open");
-
-      if (isOpen) {
-        submenu.classList.remove("open");
-        icon.textContent = "+";
-        btn.classList.remove("active");
-      } else {
-        submenu.classList.add("open");
-        icon.textContent = "-";
-        btn.classList.add("active");
-      }
-    });
-  });
-
-  // header active class
-  $(window).scroll(function () {
-    if ($(window).scrollTop() > 0) {
-      $("#header").addClass("active");
-    } else {
-      $("#header").removeClass("active");
-    }
-  });
 });

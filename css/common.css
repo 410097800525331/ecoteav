@@ -35,8 +35,15 @@ section {
   margin: 0 auto;
 }
 @media (max-width: 1024px) {
+  section {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .form_wrap .container {
+    align-items: flex-start;
+  }
   h2 {
-    font-size: 3.2rem;
+    font-size: 3rem;
   }
   p {
     font-size: 1.4rem;

@@ -168,7 +168,7 @@
     flex: 1 1 100%;
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 5760px) {
   .qty_box {
     width: 100px;
   }
@@ -179,6 +179,9 @@
   .qty_box input {
     width: 40px;
     font-size: 0.9rem;
+  }
+  .radio_list {
+    gap: 0;
   }
 }
 /* 하단 정보 */
