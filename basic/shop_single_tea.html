@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>에코티브 - 브랜드굿즈제작, 티백OEM/ODM, 블렌딩티 개발, 향료 개발</title>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/shop.css">
+</head>
+
+<body>
+  <div id="header_wrap"></div>
+  <section>
+    <h2>취급원료(Shop)</h2>
+    <div class="shop_filter">
+      <button class="filter_btn active" data-filter="all">All</button>
+      <button class="filter_btn" data-filter="single">허브/홍차</button>
+      <button class="filter_btn" data-filter="korean">국내산 원료</button>
+      <button class="filter_btn" data-filter="flavor">시그니쳐 향료</button>
+      <button class="filter_btn" data-filter="sample">샘플 신청</button>
+    </div>
+    <div class="shop_grid" id="shop_grid"></div>
+  </section>
+  <section class="shop_wrap">
+    <div class="inner">
+
+      <!-- top bar -->
+      <div class="shop_top">
+        <p class="total_count">Total <strong>12</strong> items</p>
+
+        <select class="sort_select">
+          <option>신상품</option>
+          <option>낮은 가격</option>
+          <option>높은 가격</option>
+        </select>
+      </div>
+
+      <!-- product grid -->
+      <div class="product_grid" id="product_grid"></div>
+
+    </div>
+  </section>
+
+  <script>
+    const products = [
+      {
+        title: 'O!MYMEAL SAMPLE_01',
+        desc: '상품 요약설명이 노출됩니다.',
+        price: 15000,
+        sale: 10000,
+        discount: 33,
+        img: '/assets/img/sample_01.jpg'
+      },
+      {
+        title: 'O!MYMEAL SAMPLE_02',
+        desc: '상품 요약설명이 노출됩니다.',
+        price: 15000,
+        sale: 5000,
+        discount: 67,
+        img: '/assets/img/sample_02.jpg'
+      },
+      {
+        title: 'O!MYMEAL SAMPLE_04',
+        desc: '상품 요약설명이 노출됩니다.',
+        price: 15000,
+        sale: 5000,
+        discount: 67,
+        img: '/assets/img/sample_04.jpg'
+      },
+      {
+        title: 'O!MYMEAL SAMPLE_03',
+        desc: '상품 요약설명이 노출됩니다.',
+        price: 10000,
+        sale: 8000,
+        discount: 20,
+        img: '/assets/img/sample_03.jpg'
+      }
+    ];
+
+    const grid = document.getElementById('product_grid');
+
+    products.forEach(item => {
+      const card = `
+    <div class="product_card">
+      <div class="card_img_wrap">
+        <img src="${item.img}" alt="${item.title}">
+        <span class="discount_badge">${item.discount}%</span>
+
+        <div class="card_hover">
+          <button>🛒</button>
+          <button>♡</button>
+          <button>≡</button>
+        </div>
+    <div class="card_info">
+        <h3 class="card_title">${item.title}</h3>
+        <p class="card_desc">${item.desc}</p>
+        <p class="card_price">
+          <del>${item.price.toLocaleString()}원</del>
+          <strong>${item.sale.toLocaleString()}원</strong>
+        </p>
+      </div>
+    </div>
+  `;
+      grid.insertAdjacentHTML('beforeend', card);
+    });
+  </script>
+  <div id="footer_wrap"></div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="../js/include.js"></script>
+</body>
+
+</html>

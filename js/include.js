@@ -11,7 +11,7 @@ $(document).ready(function () {
         <nav id="gnb">
           <ul class="main">
             <li>
-              <a href="#">기업소개</a>
+              <a href="/basic/company_about_ci.html">기업소개</a>
               <ul class="sub">
                 <li><a href="/basic/company_about_ci.html">기업소개/CI</a></li>
                 <li><a href="/basic/company_history.html">연혁</a></li>
@@ -19,7 +19,7 @@ $(document).ready(function () {
               </ul>
             </li>
             <li>
-              <a href="#">상담/견적 신청</a>
+              <a href="/basic/consultation_blending.html">상담/견적 신청</a>
               <ul class="sub">
                 <li><a href="/basic/consultation_blending.html">블렌딩티 상담신청</a></li>
                 <li><a href="/basic/consultation_fragrance.html">향료 상담신청</a></li>
@@ -27,7 +27,7 @@ $(document).ready(function () {
               </ul>
             </li>
             <li>
-              <a href="#">OEM/ODM</a>
+              <a href="/basic/oem_process.html">OEM/ODM</a>
               <ul class="sub">
                 <li><a href="/basic/oem_process.html">프로세스</a></li>
                 <li><a href="/basic/oem_partners.html">협력사</a></li>
@@ -36,7 +36,7 @@ $(document).ready(function () {
               </ul>
             </li>
             <li>
-              <a href="#">패키지 제작</a>
+              <a href="/basic/package_three_side.html">패키지 제작</a>
               <ul class="sub">
                 <li><a href="/basic/package_three_side.html">풀컬러 삼방</a></li>
                 <li><a href="/basic/package_roll.html">풀컬러 자동롤</a></li>
@@ -46,16 +46,16 @@ $(document).ready(function () {
               </ul>
             </li>
             <li>
-              <a href="#">취급원료(Shop)</a>
+              <a href="/basic/shop_single_tea.html">취급원료(Shop)</a>
               <ul class="sub">
-                <li><a href="/basic/shop_herb_black_tea.html">허브/홍차</a></li>
+                <li><a href="/basic/shop_single_tea.html">허브/홍차</a></li>
                 <li><a href="/basic/shop_korean_ingredient.html">국내산 원료</a></li>
                 <li><a href="/basic/shop_flavor.html">시그니쳐 향료</a></li>
                 <li><a href="/basic/shop_sample_request.html">샘플 신청</a></li>
               </ul>
             </li>
             <li>
-              <a href="#">문의하기</a>
+              <a href="/basic/inquiry_inquiry.html">문의하기</a>
               <ul class="sub">
                 <li><a href="/basic/inquiry_inquiry.html">1:1 문의하기</a></li>
                 <li><a href="/basic/inquiry_collaboration.html">협업 문의하기</a></li>
@@ -127,7 +127,7 @@ $(document).ready(function () {
         <li>
           <div class="mobile_main_menu">취급원료(Shop)<span class="toggle_icon">+</span></div>
           <ul class="mobile_sub">
-            <li><a href="/basic/shop_herb_black_tea.html">허브/홍차</a></li>
+            <li><a href="/basic/shop_single_tea.html">허브/홍차</a></li>
             <li><a href="/basic/shop_korean_ingredient.html">국내산 원료</a></li>
             <li><a href="/basic/shop_flavor.html">시그니쳐 향료</a></li>
             <li><a href="/basic/shop_sample_request.html">샘플 신청</a></li>
