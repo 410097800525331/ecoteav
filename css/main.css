@@ -6,7 +6,7 @@
 @import url(footer.css);
 
 /* ##### banner ##### */
-.banner {
+/* .banner {
   position: relative;
   width: 100%;
   height: 500px;
@@ -27,10 +27,10 @@
   padding: 0 120px;
 }
 .slide:nth-child(1) {
-  background: url(https://isisorganic.com/wp-content/uploads/2021/03/isis-slider-flip-en.jpg) no-repeat 0 0;
+  background: url(http://www.twgkorea.com/web/upload/slider/images/main_12_02.jpg) no-repeat 0 0;
 }
 .slide:nth-child(2) {
-  background: url(https://isisorganic.com/wp-content/uploads/2021/03/isis-slider-flip-en.jpg) no-repeat 0 0;
+  background: url(http://www.twgkorea.com/web/upload/slider/images/main_12_2.jpg) no-repeat 0 0;
 }
 .slide:nth-child(3) {
   background: url(https://isisorganic.com/wp-content/uploads/2021/03/isis-slider-flip-en.jpg) no-repeat 0 0;
@@ -54,7 +54,62 @@
 .slide_description {
   color: var(--ts);
   margin-bottom: 30px;
+} */
+.main_banner {
+  width: 100%; height: 780px;
 }
+.banner_list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.banner_list li {
+  position: relative;
+  overflow: hidden;
+}
+.banner_img {
+  width: 100%; height: 780px;
+  background-size: cover;
+  background-position: top;
+  transition: transform 0.5s ease;
+}
+.banner_list li:hover .banner_img {
+  transform: scale(1.1);
+}
+.banner_overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: background-color 0.4s ease;
+  z-index: 1;
+}
+.banner_list li:hover .banner_overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.banner_text {
+  position: absolute;
+  bottom: 16%; left: 30px; right: 30px;
+  z-index: 2;
+}
+.banner_text h3 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+.banner_text p {
+  font-size: 1.5rem;
+  margin-bottom: 24px;
+  color: #fff;
+}
+@media (max-width: 770px) {
+  .banner_list {
+    grid-template-columns: 1fr;
+  }
+  .banner_img {
+    height: 250px;
+  }
+}
+
 /* controls */
 .controls_btn {
   position: absolute;

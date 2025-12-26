@@ -32,7 +32,7 @@ $(document).ready(function () {
                 <li><a href="/basic/oem_process.html">프로세스</a></li>
                 <li><a href="/basic/oem_partners.html">협력사</a></li>
                 <li><a href="/basic/oem_portfolio.html">포트폴리오</a></li>
-                <li><a href="/basic/oem_b2b_private.html">B2B 결제</a></li>
+                <!-- <li><a href="/basic/oem_b2b_private.html">B2B 결제</a></li> -->
               </ul>
             </li>
             <li>
@@ -42,16 +42,16 @@ $(document).ready(function () {
                 <li><a href="/basic/package_roll.html">풀컬러 자동롤</a></li>
                 <li><a href="/basic/package_pouch.html">지퍼스탠드</a></li>
                 <li><a href="/basic/package_box.html">단상자</a></li>
-                <li><a href="/basic/package_download.html">칼선 다운로드</a></li>
+                <!-- <li><a href="/basic/package_download.html">칼선 다운로드</a></li> -->
               </ul>
             </li>
             <li>
-              <a href="/basic/shop_single_tea.html">취급원료(Shop)</a>
+              <a href="/basic/shop.html">취급원료(Shop)</a>
               <ul class="sub">
                 <li><a href="/basic/shop_single_tea.html">허브/홍차</a></li>
                 <li><a href="/basic/shop_korean_ingredient.html">국내산 원료</a></li>
                 <li><a href="/basic/shop_flavor.html">시그니쳐 향료</a></li>
-                <li><a href="/basic/shop_sample_request.html">샘플 신청</a></li>
+                <!-- <li><a href="/basic/shop_sample_request.html">샘플 신청</a></li> -->
               </ul>
             </li>
             <li>
@@ -111,7 +111,7 @@ $(document).ready(function () {
             <li><a href="/basic/oem_process.html">프로세스</a></li>
             <li><a href="/basic/oem_partners.html">협력사</a></li>
             <li><a href="/basic/oem_portfolio.html">포트폴리오</a></li>
-            <li><a href="/basic/oem_b2b_private.html">B2B 결제</a></li>
+            <!-- <li><a href="/basic/oem_b2b_private.html">B2B 결제</a></li> -->
           </ul>
         </li>
         <li>
@@ -121,7 +121,7 @@ $(document).ready(function () {
             <li><a href="/basic/package_roll.html">풀컬러 자동롤</a></li>
             <li><a href="/basic/package_pouch.html">지퍼스탠드</a></li>
             <li><a href="/basic/package_box.html">단상자</a></li>
-            <li><a href="/basic/package_download.html">칼선 다운로드</a></li>
+            <!-- <li><a href="/basic/package_download.html">칼선 다운로드</a></li> -->
           </ul>
         </li>
         <li>
@@ -130,7 +130,7 @@ $(document).ready(function () {
             <li><a href="/basic/shop_single_tea.html">허브/홍차</a></li>
             <li><a href="/basic/shop_korean_ingredient.html">국내산 원료</a></li>
             <li><a href="/basic/shop_flavor.html">시그니쳐 향료</a></li>
-            <li><a href="/basic/shop_sample_request.html">샘플 신청</a></li>
+            <!-- <li><a href="/basic/shop_sample_request.html">샘플 신청</a></li> -->
           </ul>
         </li>
         <li>
