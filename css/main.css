@@ -158,9 +158,9 @@
   border-radius: 20px;
   background: #ccc;
 }
-@media (max-width: 768px) {
+@media (max-width: 850px) {
 .intro_images img {
-    width: 300px;
+    width: 360px; height: 250px;
   }
 }
 

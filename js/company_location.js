@@ -22,7 +22,7 @@ const location_content = [
 location_content.forEach(location_content => {
   const location = `
     <div class="location_inner">
-      <h2>${location_content.title}</h2>
+      <h2 data-aos="fade-up" data-aos-delay="100">${location_content.title}</h2>
       <p>
         <i class="fa-solid fa-location-dot"></i> ${location_content.address}<br>
         Tel&nbsp;&nbsp;${location_content.phone}&nbsp;&nbsp;&nbsp;&nbsp; mail&nbsp;&nbsp;${location_content.mail}
