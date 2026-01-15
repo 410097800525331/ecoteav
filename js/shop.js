@@ -45,8 +45,8 @@ filterBtns.forEach(btn => {
     const filter = btn.dataset.filter;
     const cards = document.querySelectorAll('.product_card');
 
-    filterBtns.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
+    filterBtns.forEach(b => b.classList.remove('is_active'));
+    btn.classList.add('is_active');
 
     cards.forEach(card => {
       const category = card.dataset.category;

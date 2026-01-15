@@ -90,7 +90,7 @@ $(document).ready(function () {
         <p>
           배송 방법 : 택배<br>
           택배사 : CJ대한통운<br>
-          배송 비용 : 3,000원(60,000원 이상 무료배송)<br>
+          배송 비용 : 3,000원 (50,000원이상 구매 시 무료배송)<br>
           배송 기간 : 평균 2일 ~ 4일소요(주말, 공휴일 제외)<br>
           배송 안내 : <br>
           - 산간벽지나 도서지방은 별도의 추가금액을 지불하셔야 하는 경우가 있습니다.<br>
@@ -153,5 +153,5 @@ $(document).ready(function () {
   </script>
   `;
 
-  $("#package_info").append(product_info);
+  $("#product_info").append(product_info);
 });

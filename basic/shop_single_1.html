@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>에코티브 - 브랜드굿즈제작, 티백OEM/ODM, 블렌딩티 개발, 향료 개발</title>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/shop.css">
+</head>
+
+<body>
+  <div id="header_wrap"></div>
+  <section>
+    <div class="product_detail_inner">
+      <div class="product_image_area">
+        <div class="product_image_wrap">
+          <img src="/assets/img/shop/unnamed.jpg" alt="캐모마일">
+        </div>
+      </div>
+      <section class="product_info_area">
+        <h2>캐모마일</h2>
+        <p>15,000원</p>
+        <ul class="product_meta">
+          <li>
+            <span>할인판매가</span>
+            <strong>10,000원</strong>
+          </li>
+          <li><span>배송방법</span> 택배</li>
+          <li><span>배송비</span> 3,000원 (50,000원이상 구매 시 무료배송)</li>
+          <li><span>원산지</span> ${product.desc || '-'}</li>
+        </ul>
+        <div class="product_option">
+          <span>${product.id}</span>
+          <input type="number" value="1" min="1">
+          <strong>${product.sale.toLocaleString()}원</strong>
+        </div>
+        <div class="total_price">
+          TOTAL <strong>${product.sale.toLocaleString()}원</strong>
+        </div>
+        <button class="btn_ basic_btn_b">바로 구매하기</button>
+      </section>
+    </div>
+  </section>
+  <div id="product_info"></div>
+  <div id="footer_wrap"></div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="/js/include.js"></script>
+  <script src="/js/shopData.js"></script>
+  <script src="/js/shop.js"></script>
+  <script src="/js/product_detail.js"></script>
+  <!-- <script src="/js/shop_product.js"></script> -->
+</body>
+
+</html>
