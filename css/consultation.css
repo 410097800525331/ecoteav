@@ -33,9 +33,6 @@ form {
   padding: 12px 14px;
   border-bottom: 1px solid var(--bs);
 }
-.form_field > input:hover {
-  border-bottom: 1px solid var(--ts);
-}
 .form_field label {
   cursor: pointer;
 }
