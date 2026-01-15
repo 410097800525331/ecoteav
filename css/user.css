@@ -135,6 +135,7 @@ form {
 }
 .mypage_menu a {
   color: var(--ts);
+  padding-right: 80px;
 }
 .mypage_menu a:hover,
 .order_extra b {
@@ -236,12 +237,13 @@ form {
   }
 }
 /* 내역 없음 */
-.mypage_sub>h3 {
+.mypage_sub_content h3 {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 400px;
+  /* height: 400px; */
+  padding: 20px 0;
   margin-top: 30px;
   border: 1px solid var(--bs);
 }

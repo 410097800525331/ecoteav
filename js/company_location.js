@@ -9,7 +9,7 @@ const location_content = [
     location2: '1. 지하철: (신분당선) 신논현역 도보 약 3분<br> 2. 버스:',
   },
   {
-    title: 'OO공장',
+    title: '에코티브 공장',
     address: '서울특별시 서초구 서운로 26길 5 토탈에코빌딩',
     phone: '010-0000-0000',
     mail: 'ecoteav@gmail.com',
