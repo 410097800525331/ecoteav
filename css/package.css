@@ -26,8 +26,7 @@
 }
 .thumb_list img {
   width: 100%;
-  display: block;
-  border: 1px solid var(--grayc);
+  border: 1px solid var(--bs);
 }
 /* 가운데: 옵션 영역 */
 .product_options {
@@ -54,11 +53,11 @@
 .option_inner label {
   width: 120px;
 }
-.option_group2  {
+.option_group2 {
   padding: 10px 8px;
   border: 1px solid var(--bs);
 }
-.option_inner > div:last-child {
+.option_inner>div:last-child {
   margin-left: auto;
 }
 .radio_list label {
@@ -93,7 +92,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px; height: 36px;
+  width: 36px;
+  height: 36px;
   background-color: #f5f5f5;
   transition: all 0.2s ease;
   font-size: 1rem;
@@ -112,7 +112,8 @@
   margin: 0;
 }
 #qty {
-  -moz-appearance: textfield; /* Firefox용 */
+  -moz-appearance: textfield;
+  /* Firefox용 */
 }
 /* 오른쪽: 가격 및 결제 */
 .product_summary {
@@ -184,21 +185,60 @@
     gap: 0;
   }
 }
-/* 하단 정보 */
-#package_info {
+
+/* 상세정보 */
+.product_info_tabs {
+  display: flex;
+  gap: 32px;
+  padding: 10px 0;
+  border-top: 1px solid var(--bs);
+  border-bottom: 2px solid var(--tm);
+}
+.product_info_tab {
+  padding: 12px 16px;
+  font-size: 1.6rem;
+  color: var(--ts);
+}
+.product_info_tab.is_active {
+  font-weight: 600;
+  color: var(--tm);
+}
+.product_info_content {
+  display: none;
+  padding: 20px;
+}
+.product_info_content.is_active {
+  display: block;
+}
+.product_info h3 {
+  flex: 1;
   display: flex;
   justify-content: center;
-  max-width: 1400px;
-  margin: 80px auto;
-  gap: 16px;
+  align-items: center;
+  padding: 20px 0;
+  margin-top: 30px;
+  border: 1px solid var(--bs);
 }
-#package_info li {
-  padding: 8px 180px;
-  border-bottom: 1px solid var(--sub);
-  cursor: pointer;
+.product_info_content button {
+  padding: 4px 8px;
+  float: right;
+  margin: 0 8px;
+  border-radius: 4px;
+  border: 1px solid var(--ts);
 }
-.click_on {
-  border: 1px solid var(--sub);
-  background: var(--sub);
-  color: #fff;
+/* 디자인가이드 */
+.guide_section {
+  border-top: 1px solid var(--bs);
+  padding: 32px 0;
+}
+.guide_section:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+.guide_list p {
+  padding-left: 18px;
+  margin: 6px 0;
+}
+.guide_section a {
+  text-decoration: underline;
 }

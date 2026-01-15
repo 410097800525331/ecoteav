@@ -242,7 +242,6 @@ form {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* height: 400px; */
   padding: 20px 0;
   margin-top: 30px;
   border: 1px solid var(--bs);
@@ -255,7 +254,6 @@ form {
   padding: 4px 8px;
   border: 1px solid var(--ts);
   border-radius: 4px;
-  cursor: pointer;
 }
 .mypage_sub_content button:hover {
   border: 1px solid var(--tm);

@@ -1,32 +1,31 @@
-<!DOCTYPE html>
-<html lang="ko">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>에코티브 - 브랜드굿즈제작, 티백OEM/ODM, 블렌딩티 개발, 향료 개발</title>
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="/css/package.css">
-</head>
+$(document).ready(function () {
+  const type = $("#package_wrap").data("type");
+  const data = package_contents[type];
 
-<body>
-  <div id="header_wrap"></div>
-  <section id="package_wrap" data-type="threeSide">
+  if (!data) {
+    console.error("잘못된 data-type 입니다.");
+    return;
+  }
+
+  // const thumbIist = data.thumbIist.map(ele => `<img src="${ele}" alt="Screen Types">`).join('');
+
+  const package = `
     <div class="package_inner">
       <!-- 왼쪽: 상품 이미지 -->
       <div class="product_image">
         <div class="main_img">
-          <img src="/assets/img/package_three.jpg" alt="상품 이미지">
+          <img src="${data.mainImg}" alt="상품 이미지">
         </div>
         <ul class="thumb_list">
-          <li><img src="/assets/img/package_three.jpg" alt="썸네일 1"></li>
-          <li><img src="/assets/img/package_three.jpg" alt="썸네일 2"></li>
-          <li><img src="/assets/img/package_three.jpg" alt="썸네일 3"></li>
+          <li><img src="${data.thumbIist}" alt="상품 이미지 1"></li>
+          <li><img src="${data.thumbIist}" alt="상품 이미지 2"></li>
+          <li><img src="${data.thumbIist}" alt="상품 이미지 3"></li>
         </ul>
       </div>
       <!-- 가운데: 옵션 영역 -->
       <div class="product_options">
-        <h2 class="product_title">[소량제작 풀컬러] 삼방</h2>
+        <h2 class="product_title">[소량제작 풀컬러] ${data.title}</h2>
         <div class="form_item">
           <label for="size">사이즈</label>
           <select id="size" required>
@@ -76,10 +75,18 @@
               <div>0원</div>
             </div>
             <div class="option_inner">
-              <label>오픈방향</label>
+              <label>밸브부착</label>
               <ul class="radio_list">
-                <li><label><input type="radio" name="opt9" value="0"> 상단</label></li>
-                <li><label><input type="radio" name="opt9" value="0"> 하단</label></li>
+                <li><label><input type="radio" name="opt5" value="146685"> 있음</label></li>
+                <li><label><input type="radio" name="opt5" value="0"> 없음</label></li>
+              </ul>
+              <div>0원</div>
+            </div>
+            <div class="option_inner">
+              <label>밑지컬러</label>
+              <ul class="radio_list">
+                <li><label><input type="radio" name="opt6" value="110000"> 있음</label></li>
+                <li><label><input type="radio" name="opt6" value="0"> 없음</label></li>
               </ul>
               <div>0원</div>
             </div>
@@ -88,6 +95,8 @@
               <ul class="radio_list">
                 <li><label><input type="radio" name="opt7" value="opt1T"> 1종</label></li>
                 <li><label><input type="radio" name="opt7" value="opt2T"> 2종</label></li>
+                <li><label><input type="radio" name="opt7" value="opt3T"> 3종</label></li>
+                <li><label><input type="radio" name="opt7" value="opt4T"> 4종</label></li>
               </ul>
               <div>0원</div>
             </div>
@@ -125,13 +134,7 @@
         </div>
       </div>
     </div>
-  </section>
-  <div id="package_info"></div>
-  <div id="footer_wrap"></div>
+    `;
 
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <script src="../js/include.js"></script>
-  <script src="/js/package.js"></script>
-</body>
-
-</html>
+  $("#package_wrap_s").append(package);
+});
