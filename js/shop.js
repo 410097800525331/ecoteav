@@ -13,19 +13,20 @@ function renderCard(item) {
         <span class="discount_badge">${item.discount}%</span>
 
         <div class="card_hover">
-          <button type="button">🛒</button>
-          <button type="button">♡</button>
+          <button type="button"><img src="/assets/img/icon_202108231507467600.png" alt="cart"></button>
+          <button type="button"><img src="/assets/img/icon_202108231507563600.png" alt="cart"></button>
+          <!-- <button type="button">♡</button> -->
           <button type="button">≡</button>
         </div>
       </div>
 
       <div class="card_info">
-        <div>${item.id}</div>
-        <h3>${item.desc}</h3>
-        <p class="card_price">
+        <h4>${item.id}</h4>
+        <div>${item.desc}</div>
+        <div class="card_price">
           <del>${item.price.toLocaleString()}원</del>
-          <strong>${item.sale.toLocaleString()}원</strong>
-        </p>
+          <b>${item.sale.toLocaleString()}원</b>
+        </div>
       </div>
     </a>
   `;

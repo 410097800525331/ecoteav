@@ -2,26 +2,25 @@
 
 .shop_filter {
   display: flex;
-  gap: 12px;
-  margin: 40px 0;
+  gap: 32px;
+  margin-top: 40px;
+  padding: 16px;
+  border-top: 1px solid var(--bs);
+  border-bottom: 2px solid var(--tm);
 }
 .filter_btn {
-  padding: 8px 18px;
-  border-radius: 20px;
-  border: 1px solid var(--ts);
-  cursor: pointer;
+  font-size: 1.6rem;
+  color: var(--ts);
 }
-.filter_btn.active {
-  color: #fff;
-  border-color: #1f3d2b;
-  background: #1f3d2b;
+.filter_btn.is_active {
+  font-weight: 600;
+  color: var(--tm);
 }
 @media (max-width: 1024px) {
   .shop_grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-
 @media (max-width: 768px) {
   .shop_grid {
     grid-template-columns: repeat(2, 1fr);
@@ -30,7 +29,7 @@
 .product_grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 40px 24px;
+  gap: 60px 24px;
 }
 .product_card {
   position: relative;
@@ -43,19 +42,20 @@
 .card_img_wrap img {
   width: 100%;
   display: block;
+  border: 1px solid var(--bs);
 }
 .discount_badge {
   position: absolute;
-  top: 14px;
-  right: 14px;
+  top: 5px;
+  right: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   color: #fff;
-  background: #000;
+  background: var(--mc);
 }
 .card_hover {
   position: absolute;
@@ -81,6 +81,17 @@
   margin-top: 14px;
   text-align: center;
 }
+.card_info h4 {
+  font-size: 2rem;
+  margin: 0 0 10px;
+}
+.card_info div {
+  color: var(--ts);
+}
+.card_info b {
+  font-size: 1.8rem;
+  color: var(--tm);
+}
 @media (max-width: 1024px) {
   .product_grid {
     grid-template-columns: repeat(3, 1fr);
@@ -97,7 +108,7 @@
   }
 }
 
-/* 상세 */
+/* 이너 */
 .product_detail_inner {
   display: flex;
   gap: 80px;
