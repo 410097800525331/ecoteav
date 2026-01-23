@@ -11,7 +11,7 @@ $(document).ready(function () {
         <button class="product_info_tab" data-tab="qna">상품문의</button>
       </div>
       <div id="detail" class="product_info_content is_active">
-        <p>제품정보</p>
+        <img src="/assets/img/infom.jpg" alt="임시 상세정보">
       </div>
       <div id="design" class="product_info_content">
         <div class="guide_container">
