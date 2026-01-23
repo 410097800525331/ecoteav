@@ -31,7 +31,7 @@ $(document).ready(function () {
 
   const consultationTop = `
     <div class="form_wrap">
-      <h3><a class="line" href="#">자주 묻는 질문</a></h3>
+      <h3><a class="line" href="/basic/inquiry_faq.html">자주 묻는 질문</a></h3>
       <h2>${data.title}</h2>
       <div class="container">
         <p>${data.subPost}</p>
