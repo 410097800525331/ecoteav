@@ -110,6 +110,67 @@
   }
 }
 
+/* 프로세스 */
+.oem_title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+.oem_steps {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 24px auto 70px;
+}
+.oem_step {
+  width: 200px;
+  text-align: center;
+}
+.oem_circle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90px; height: 90px;
+  border-radius: 50%;
+  background: var(--bm);
+  font-size: 2.2rem;
+  margin: 0 auto 10px;
+}
+.oem_circle span {
+  position: absolute;
+  bottom: -16px;
+  font-weight: 500;
+  color: var(--mc);
+}
+.oem_step h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 16px 0 8px;
+}
+.oem_step p {
+  font-size: 1.4rem;
+}
+.oem_circle i {
+  color: var(--ts);
+}
+.arrow {
+  font-size: 1.8rem;
+  align-self: center;
+}
+@media (max-width: 770px) {
+  .oem_steps {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .arrow {
+    transform: rotate(90deg);
+  }
+}
+
 /* controls */
 .controls_btn {
   position: absolute;
