@@ -6,128 +6,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>에코티브 - 브랜드굿즈제작, 티백OEM/ODM, 블렌딩티 개발, 향료 개발</title>
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="/css/inquiry_package.css">
+  <link rel="stylesheet" href="/css/inquiry.css">
 </head>
 
 <body>
   <div id="header_wrap"></div>
-  <section id="inquiry_package_wrap">
+  <section class="inquiry_wrap">
     <div class="board_wrap">
+      <h2>패키지 문의</h2>
+      <div class="inquiry_list" id="inquiryList">
+        <p>보다 빠른 상담을 원하실 경우, 아래 연락처를 통해 문의해 주세요.<br>대표번호: T. 010-0000-0000 / E-mail: ecoteav@gmail.com
+        </p>
 
-  <div class="board_filter">
-    <select>
-      <option>전체</option>
-    </select>
-  </div>
+        <div class="btn_wrap">
+          <button class="btn" id="writeBtn">문의 작성하기</button>
+        </div>
 
-  <table class="board_table">
-    <thead>
-      <tr>
-        <th class="col_no">NO</th>
-        <th class="col_status">진행상태</th>
-        <th class="col_title">제목</th>
-        <th class="col_writer">작성자</th>
-        <th class="col_date">날짜</th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <tr>
-        <td>4003</td>
-        <td><span class="status status_blue">수정방법안내</span></td>
-        <td class="title_td">수정요청 접수 🔒[3]</td>
-        <td>이****</td>
-        <td>2025-11</td>
-      </tr>
-
-      <tr>
-        <td>4002</td>
-        <td><span class="status status_blue">수정방법안내</span></td>
-        <td class="title_td">수정요청 접수 🔒[1]</td>
-        <td>허****</td>
-        <td>2025-11</td>
-      </tr>
-
-      <tr>
-        <td>4001</td>
-        <td><span class="status status_blue">수정방법안내</span></td>
-        <td class="title_td">수정요청 접수 🔒[1]</td>
-        <td>김****</td>
-        <td>2025-11</td>
-      </tr>
-
-      <tr>
-        <td>4000</td>
-        <td><span class="status status_blue">수정방법안내</span></td>
-        <td class="title_td">수정요청 접수 🔒[1]</td>
-        <td>김****</td>
-        <td>2025-11</td>
-      </tr>
-
-      <tr>
-        <td>3999</td>
-        <td><span class="status status_black">수정완료</span></td>
-        <td class="title_td">수정요청 접수 🔒[1]</td>
-        <td>김****</td>
-        <td>2025-11</td>
-      </tr>
-
-      <tr>
-        <td>3998</td>
-        <td><span class="status status_black">수정완료</span></td>
-        <td class="title_td">수정요청 접수 🔒[1]</td>
-        <td>추****</td>
-        <td>2025-11</td>
-      </tr>
-
-      <tr>
-        <td>3997</td>
-        <td><span class="status status_black">수정완료</span></td>
-        <td class="title_td">수정요청 접수 🔒[3]</td>
-        <td>신****</td>
-        <td>2025-11</td>
-      </tr>
-
-      <tr>
-        <td>3996</td>
-        <td><span class="status status_blue">수정방법안내</span></td>
-        <td class="title_td">수정요청 접수 🔒[1]</td>
-        <td>최****</td>
-        <td>2025-11</td>
-      </tr>
-
-      <tr>
-        <td>3995</td>
-        <td><span class="status status_blue">수정방법안내</span></td>
-        <td class="title_td">수정요청 접수 🔒[2]</td>
-        <td>강****</td>
-        <td>2025-11</td>
-      </tr>
-
-      <tr>
-        <td>3994</td>
-        <td><span class="status status_orange">수정불가</span></td>
-        <td class="title_td">수정요청 접수 🔒[1]</td>
-        <td>사****</td>
-        <td>2025-11</td>
-      </tr>
-
-      <tr>
-        <td>3993</td>
-        <td><span class="status status_black">수정완료</span></td>
-        <td class="title_td">수정요청 접수 🔒[1]</td>
-        <td>김****</td>
-        <td>2025-11</td>
-      </tr>
-    </tbody>
-  </table>
-
-</div>
+        <table class="board_table">
+          <thead>
+            <tr>
+              <th class="col_no">NO</th>
+              <th class="col_status">진행상태</th>
+              <th class="col_title">제목</th>
+              <th class="col_writer">작성자</th>
+              <th class="col_date">날짜</th>
+            </tr>
+          </thead>
+          <!-- js -->
+          <tbody></tbody>
+        </table>
+        <div class="board_pagination">
+          <button class="page_btn is_disabled" data-page="prev">‹</button>
+          <button class="page_btn is_active" data-page="1">1</button>
+          <button class="page_btn" data-page="2">2</button>
+          <button class="page_btn" data-page="3">3</button>
+          <button class="page_btn" data-page="next">›</button>
+        </div>
+      </div>
   </section>
+
   <div id="footer_wrap"></div>
 
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="../js/include.js"></script>
+  <script src="../js/inquiry_package.js"></script>
 </body>
 
 </html>
