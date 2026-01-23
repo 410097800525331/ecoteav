@@ -4,7 +4,7 @@ const grid = document.getElementById('product_grid');
 function renderCard(item) {
   return `
     <a class="product_card"
-       href="/basic/shop_single_1.html"
+       href="/basic/shop_info.html?id=${encodeURIComponent(item.id)}"
        data-category="${item.category}"
        data-id="${item.id}">
 
@@ -13,9 +13,8 @@ function renderCard(item) {
         <span class="discount_badge">${item.discount}%</span>
 
         <div class="card_hover">
-          <button type="button"><img src="/assets/img/icon_202108231507467600.png" alt="cart"></button>
-          <button type="button"><img src="/assets/img/icon_202108231507563600.png" alt="cart"></button>
-          <!-- <button type="button">♡</button> -->
+          <button type="button"><img src="/assets/img/icon_202108231507467600.png"></button>
+          <button type="button"><img src="/assets/img/icon_202108231507563600.png"></button>
           <button type="button">≡</button>
         </div>
       </div>
@@ -31,6 +30,7 @@ function renderCard(item) {
     </a>
   `;
 }
+
 // function renderCard(item) {
 //   return `
 //     <a class="product_card"

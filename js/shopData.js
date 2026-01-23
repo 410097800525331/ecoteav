@@ -1,3 +1,7 @@
+function getProductById(id) {
+  return shopProducts.find(item => item.id === id);
+}
+
 const shopProducts = [
   // 허브
   {
