@@ -21,7 +21,7 @@ form {
 .form_row .field {
   flex: 1;
 }
-.form_row input {
+.form_row input:not(.radio_group input) {
   width: 100%;
   padding: 12px 14px;
   border-bottom: 1px solid var(--bs);
@@ -45,14 +45,11 @@ form {
 }
 .radio_group {
   display: flex;
-  gap: 20px;
-  font-size: 0.9rem;
 }
 .agree_box {
-  border: 1px solid #ddd;
+  border: 1px solid var(--bs);
   padding: 20px;
-  font-size: 0.85rem;
-  line-height: 1.6;
+  font-size: 1.2rem;
   margin-top: 30px;
 }
 .agree_radio {
@@ -62,14 +59,13 @@ form {
 }
 .btn_group {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   gap: 10px;
   margin-top: 40px;
 }
 .btn_group button {
   min-width: 100px;
   padding: 12px 0;
-  font-size: 0.9rem;
   border: 1px solid #222;
   background: #fff;
   cursor: pointer;
