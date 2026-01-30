@@ -146,7 +146,7 @@ form {
   padding: 5px 14px;
   border-radius: 20px;
   font-size: 13px;
-  border: 2px solid;
+  border: 2px solid #fff;
 }
 .status_ok {
   color: var(--mc);

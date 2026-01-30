@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>에코티브 - 브랜드굿즈제작, 티백OEM/ODM, 블렌딩티 개발, 향료 개발</title>
+  <link rel="icon" href="/ecoteav-favicon.png">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/shop.css">
+</head>
+
+<body>
+  <!-- ##### header ##### -->
+  <div id="header_wrap"></div>
+  <section class="order_wrap">
+    <h2>ORDER</h2>
+    <p>상품의 옵션 및 수량 변경은 상품상세 또는 장바구니에서 가능합니다.</p>
+    <!-- 주문 상품 -->
+    <div>
+      <h3>주문상품</h3>
+      <table class="order_table">
+        <thead>
+          <tr>
+            <th>선택</th>
+            <th>상품명</th>
+            <th>가격</th>
+            <th>수량</th>
+            <th>합계</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="checkbox" class="product_check" checked></td>
+            <td class="title">캐모마일</td>
+            <td>10,000원</td>
+            <td>1</td>
+            <td>10,000원</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="container">
+        <button class="btn_delete_selected">선택상품 삭제</button>
+        <div class="order_price_summary">
+          상품금액 <strong>10,000원</strong> + 배송비 <strong>3,000원</strong>
+          = <b>13,000원</b>
+        </div>
+      </div>
+    </div>
+
+    <!-- 주문조회 비밀번호 -->
+    <div>
+      <h2 class="block_title">주문조회 비밀번호</h2>
+      <p class="desc">(영문대소문자/숫자/특수문자 중 2가지 이상 조합, 6자~16자)</p>
+
+      <div class="form_row">
+        <span>비밀번호</span>
+        <input type="password" id="order_pw">
+      </div>
+      <div class="form_row">
+        <span>비밀번호 확인</span>
+        <input type="password" id="order_pw_confirm">
+      </div>
+    </div>
+
+    <!-- 간편 회원가입 -->
+    <div>
+      <h3>간편 회원가입</h3>
+      <ul>
+        <li>- 이메일, 아이디, 비밀번호만으로 간편하게 회원가입이 가능합니다.</li>
+        <li>- 회원가입 후 쿠폰, 이벤트 등 할인혜택을 받으실 수 있습니다.</li>
+      </ul>
+      <label class="check_row">
+        <input type="checkbox"> 간편 회원가입 진행
+      </label>
+    </div>
+
+    <!-- 약관 -->
+    <div>
+      <h3>약관 동의</h3>
+      <label><input type="checkbox"> 모든 약관 동의</label>
+      <div class="terms_box">
+        <h4>쇼핑몰 이용약관</h4>
+        <div class="terms_scroll">
+          제1조(목적)이 약관은 ecoteav(전자상거래 사업자)이 운영하는 TGE TEA몰(이하 “몰”이라 한다)에서 제공하는 인터넷 관련 서비스(이하 “서비스”라 한다)를 이용함에 있어 사이버 몰과
+          이용자의 권리.의무 및 책임사항을 규정함을 목적으로 합니다.<br>※「PC통신, 무선 등을 이용하는 전자상거래에 대해서도 그 성질에 반하지 않는 한 이 약관을
+          준용합니다.」<br><br>제2조(정의)① “몰”이란 ecoteav이 재화 또는 용역(이하 “재화 등”이라 함)을 이용자에게 제공하기 위하여 컴퓨터 등 정보통신설비를 이용하여 재화 등을 거래할 수
+          있도록 설정한 가상의 영업장을 말하며, 아울러 사이버몰을 운영하는 사업자의 의미로도 사용합니다.<br>② “이용자”란 “몰”에 접속하여 이 약관에 따라 “몰”이 제공하는 서비스를 받는 회원 및
+          비회원을 말합니다.③ ‘회원’이라 함은 “몰”에 회원등록을 한 자로서, 계속적으로 “몰”이 제공하는 서비스를 이용할 수 있는 자를 말합니다.④ ‘비회원’이라 함은 회원에 가입하지 않고 “몰”이
+          제공하는 서비스를 이용하는 자를 말합니다.<br><br>제3조 (약관 등의 명시와 설명 및 개정)① “몰”은 이 약관의 내용과 상호 및 대표자 성명, 영업소 소재지 주소(소비자의 불만을 처리할 수
+          있는 곳의 주소를 포함), 전화번호.모사전송번호.전자우편주소, 사업자등록번
+        </div>
+      </div>
+      <div class="terms_box">
+        <h4>비회원 구매 시 개인정보 수집 및 이용 동의</h4>
+        <div class="terms_scroll">
+          ** 본 양식은 쇼핑몰 운영에 도움을 드리고자 샘플로 제공되는 서식으로 쇼핑몰 운영형태에 따른 수정이 필요합니다. 쇼핑몰에 적용하시기 전, 쇼핑몰 운영 사항 등을 확인하시고 적절한 내용을 반영하여
+          사용하시기 바랍니다. **1. 개인정보 수집목적 및 이용목적 : 비회원 구매 서비스 제공2. 수집하는 개인정보 항목- 주문 시, 성명, 주소, 전화번호, 이메일, 결제정보, 비회원 결제 비밀번호-
+          취소/교환/반품 신청 시, 환불계좌정보(은행명, 계좌번호, 예금주)3. 개인정보의 보유기간 및 이용기간원칙적으로, 개인정보 수집 및 이용목적이 달성된 후에는 해당 정보를 지체 없이 파기합니다. 단,
+          다음의 정보에 대해서는 아래의 이유로 명시한 기간 동안 보존합니다.가. 회사 내부 방침에 의한 정보 보유 사유· 부정거래 방지 및 쇼핑몰 운영방침에 따른 보관 : OO년나. 관련 법령에 의한
+          정보보유 사유o 계약 또는 청약철회 등에 관한 기록-보존이유 : 전자상거래등에서의소비자보호에관한법률-보존기간 : 5년o 대금 결제 및 재화 등의 공급에 관한 기록-보존이유:
+          전자상거래등에서의소비자보호에관한법률-보존기간 : 5년 o 소비자 불만 또는 분쟁처리에 관한 기록-보존이유 : 전자상거래등에서의소비자보호에관한법률-보존기간 : 3년 o 로그 기록 -보존이유:
+          통신비밀보호법-보존기간 : 3개월※ 동의를 거부할 수 있으나 거부시 비회원 구매 서비스 이용이 불가능합니다.
+        </div>
+      </div>
+    </div>
+
+    <!-- 결제 예정 금액 -->
+    <div>
+      <h3>결제 예정 금액</h3>
+      <div class="coupon_row">
+        <select id="coupon_select">
+          <option value="0">쿠폰 선택</option>
+          <option value="2000" selected>2,000원 할인 쿠폰</option>
+        </select>
+      </div>
+      <ul class="price_list">
+        <li>총 주문금액 <span id="total_price">13,000원</span></li>
+        <li>쿠폰 할인 <span id="coupon_price">-2,000원</span></li>
+        <li class="total">총 결제금액 <span id="final_price">11,000원</span></li>
+      </ul>
+    </div>
+
+    <!-- 결제수단 -->
+    <div>
+      <h3>결제수단</h3>
+      <!-- 결제수단 선택 -->
+      <div class="pay_method_tabs">
+        <label class="pay_tab active">
+          <input type="radio" name="pay" value="bank" checked>
+          무통장입금
+        </label>
+        <label class="pay_tab">
+          <input type="radio" name="pay" value="card">
+          신용카드
+        </label>
+        <label class="pay_tab">
+          <input type="radio" name="pay" value="account">
+          계좌이체
+        </label>
+      </div>
+
+      <!-- 결제 상세 -->
+      <div class="pay_detail active" data-pay="bank">
+        <div class="form_row">
+          <span>입금자명</span>
+          <input type="text">
+        </div>
+        <div class="form_row">
+          <span>입금은행</span>
+          <select>
+            <option>::: 선택해 주세요. :::</option>
+            <option>국민은행</option>
+            <option>신한은행</option>
+            <option>우리은행</option>
+          </select>
+        </div>
+        <div class="notice">
+          은행사이트 바로가기<br><br>
+          4개 카드사(VISA, MasterCard, JCB, BC)를 이용할 수 있습니다.<br>
+          USD, JPY, EUR, GBP 등 세계 주요 23개국 통화를 지원합니다.
+        </div>
+        <div class="price_box">
+          무통장입금 최종결제 금액<br>
+          <strong>10,000원</strong>
+        </div>
+        <label class="pay_agree">
+          <input type="checkbox"> 결제정보를 확인하였으며, 구매진행에 동의합니다.
+        </label>
+        <button class="pay_btn">결제하기</button>
+      </div>
+
+      <div class="pay_detail" data-pay="card">
+        <div class="form_row">
+          <span>카드선택</span>
+          <select>
+            <option>선택해주세요.</option>
+            <option>국민카드</option>
+            <option>신한카드</option>
+            <option>삼성카드</option>
+          </select>
+        </div>
+        <div class="form_row">
+          <span>할부기간</span>
+          <select>
+            <option>일시불</option>
+            <option>2개월</option>
+            <option>3개월</option>
+          </select>
+        </div>
+        <p class="desc">법인카드는 무이자 할부 적용이 되지 않습니다.</p>
+        <div class="notice">
+          결제안내 | 공인인증서 발급안내 | 안심클릭 안내 | 안전결제(ISP) 안내<br>
+          결제대행서비스 약관에 모두 동의합니다. (전체보기)<br>
+          소액 결제의 경우 PG사 정책에 따라 결제 금액 제한이 있을 수 있습니다.<br><br>
+          4개 카드사(VISA, MasterCard, JCB, BC)를 이용할 수 있습니다.<br>
+          USD, JPY, EUR, GBP 등 세계 주요 23개국 통화를 지원합니다.
+        </div>
+        <div class="price_box">
+          신용카드 최종결제 금액<br>
+          <strong>10,000원</strong>
+        </div>
+        <button class="pay_btn">결제하기</button>
+      </div>
+
+      <div class="pay_detail" data-pay="account">
+        <div class="form_row">
+          <span>예금주명</span>
+          <input type="text">
+        </div>
+        <div class="notice">
+          소액 결제의 경우 PG사 정책에 따라 결제 금액 제한이 있을 수 있습니다.<br><br>
+          4개 카드사(VISA, MasterCard, JCB, BC)를 이용할 수 있습니다.<br>
+          USD, JPY, EUR, GBP 등 세계 주요 23개국 통화를 지원합니다.
+        </div>
+        <div class="price_box">
+          계좌이체 최종결제 금액<br>
+          <strong>10,300원</strong>
+        </div>
+        <button class="pay_btn">결제하기</button>
+      </div>
+    </div>
+
+    <!-- 안내 -->
+    <div>
+      <h3>결제 및 증빙 안내</h3>
+      <div class="info_scroll">
+        <strong>무이자 할부 안내</strong><br>
+        무이자 상품과 일반 상품을 함께 구매할 경우 적용되지 않습니다.<br><br>
+        <strong>세금계산서 발행 안내</strong><br>
+        배송완료일 기준 다음달 10일까지 신청 가능합니다.<br><br>
+        <strong>현금영수증 이용안내</strong><br>
+        무통장입금, 계좌이체 시 발행 가능하며 48시간 이내 신청해야 합니다.
+      </div>
+    </div>
+  </section>
+  <!-- ##### fooyer ##### -->
+  <div id="footer_wrap"></div>
+
+  <script>
+    /* 선택상품 삭제 */
+    $('.btn_delete_selected').on('click', function () {
+      $('.product_check:checked').closest('tr').remove();
+    });
+
+    /* 쿠폰 */
+    $('#coupon_select').on('change', function () {
+      const discount = Number($(this).val());
+      const total = 19400;
+      $('#coupon_price').text(`-${discount.toLocaleString()}원`);
+      $('#final_price').text(`${(total - discount).toLocaleString()}원`);
+    });
+
+    /* 결제수단 */
+    $('input[name="pay"]').on('change', function () {
+      const value = $(this).val();
+
+      $('.pay_tab').removeClass('active');
+      $(this).closest('.pay_tab').addClass('active');
+
+      $('.pay_detail').removeClass('active');
+      $(`.pay_detail[data-pay="${value}"]`).addClass('active');
+    });
+  </script>
+  <!-- include.js -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="/js/include.js"></script>
+</body>
+
+</html>

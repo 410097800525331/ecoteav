@@ -111,11 +111,16 @@
   font-weight: 300;
 }
 .accordion_content {
-  display: none;
-  padding-top: 20px;
+  max-height: 0;
+  overflow: hidden;
+  padding-top: 0;
+  transition:
+    max-height 0.4s ease,
+    padding-top 0.3s ease;
 }
 .accordion_content.open {
-  display: block;
+  max-height: 500px;
+  padding-top: 20px;
 }
 .accordion_content ul li {
   padding: 8px;

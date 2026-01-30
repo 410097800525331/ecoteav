@@ -12,40 +12,54 @@ $(document).ready(function () {
   /* shop 전용 상단 */
   if (productInfoEl && product) {
     productInfoEl.innerHTML = `
-  <div class="product_image_area">
-    <div class="product_image_wrap">
-      <img src="${product.img}" alt="${product.id}">
+<div class="product_image_area">
+  <div class="product_image_wrap">
+    <img src="${product.img}" alt="${product.id}">
+  </div>
+</div>
+
+<section class="product_info_area">
+  <h2>${product.id}</h2>
+  <del>${product.price.toLocaleString()}원</del>
+
+  <ul class="product_meta">
+    <li>
+      <span>할인판매가</span>
+      <strong class="unit_price">${product.sale.toLocaleString()}</strong>원
+    </li>
+    <li><span>배송방법</span> 택배</li>
+    <li><span>배송비</span> 3,000원 (50,000원이상 무료배송)</li>
+    <li><span>원산지</span> ${product.desc}</li>
+  </ul>
+
+  <!-- 옵션 -->
+  <div class="product_option">
+    <span>${product.id} 50티백</span>
+
+    <div class="qty_control">
+      <button type="button" class="qty_btn minus">-</button>
+      <input type="number" id="qty_input" value="1" min="1">
+      <button type="button" class="qty_btn plus">+</button>
     </div>
+
+    <strong class="option_price">${product.sale.toLocaleString()}원</strong>
   </div>
 
-  <section class="product_info_area">
-    <h2>${product.id}</h2>
-    <del>${product.price.toLocaleString()}원</del>
-    <ul class="product_meta">
-      <li>
-        <span>할인판매가</span>
-        <strong>${product.sale.toLocaleString()}원</strong>
-      </li>
-      <li><span>배송방법</span> 택배</li>
-      <li><span>배송비</span> 3,000원 (50,000원이상 무료배송)</li>
-      <li><span>원산지</span> ${product.desc}</li>
-    </ul>
+  <!-- 총 금액 -->
+  <div class="total_price">
+    TOTAL <strong id="total_price">${product.sale.toLocaleString()}원</strong>
+  </div>
 
-    <div class="product_option">
-      <span>${product.id} 50티백</span>
-      <input type="number" value="1" min="1">
-      <strong>${product.sale.toLocaleString()}원</strong>
-    </div>
+  <!-- 버튼 -->
+  <div class="btn_group main">
+    <button class="btn_buy basic_btn_b">구매하기</button>
+  </div>
 
-    <div class="total_price">
-      TOTAL <strong>${product.sale.toLocaleString()}원</strong>
-    </div>
-
-    <div class="btn_group">
-      <button class="btn_ basic_btn_w">장바구니</button>
-      <button class="btn_ basic_btn_b">구매하기</button>
-    </div>
-  </section>
+  <div class="btn_group sub">
+    <button class="btn_cart basic_btn_w">장바구니</button>
+    <button class="btn_wish basic_btn_w">관심상품</button>
+  </div>
+</section>
   `;
   }
 
@@ -228,6 +242,57 @@ $(document).ready(function () {
     </div>
   </section>
   `;
+
+  // 수량 금액 증가
+  const qtyInput = document.getElementById('qty_input');
+  const totalPriceEl = document.getElementById('total_price');
+  const optionPriceEl = document.querySelector('.option_price');
+
+  const unitPrice = product.sale;
+
+  /* 금액 계산 */
+  function updatePrice() {
+    const qty = Number(qtyInput.value);
+    const total = unitPrice * qty;
+
+    optionPriceEl.textContent = total.toLocaleString() + '원';
+    totalPriceEl.textContent = total.toLocaleString() + '원';
+  }
+
+  /* 초기 실행 */
+  updatePrice();
+
+  /* 수량 버튼 */
+  document.querySelector('.qty_btn.plus').addEventListener('click', () => {
+    qtyInput.value = Number(qtyInput.value) + 1;
+    updatePrice();
+  });
+
+  document.querySelector('.qty_btn.minus').addEventListener('click', () => {
+    if (qtyInput.value > 1) {
+      qtyInput.value = Number(qtyInput.value) - 1;
+      updatePrice();
+    }
+  });
+
+  qtyInput.addEventListener('input', () => {
+    if (qtyInput.value < 1) qtyInput.value = 1;
+    updatePrice();
+  });
+
+  /* 버튼 액션 */
+  document.querySelector('.btn_cart').addEventListener('click', () => {
+    alert('장바구니에 담겼습니다');
+  });
+
+  document.querySelector('.btn_wish').addEventListener('click', () => {
+    alert('관심상품에 추가되었습니다');
+  });
+
+  document.querySelector('.btn_buy').addEventListener('click', () => {
+    alert('구매 페이지로 이동합니다');
+  });
+
 
   const tabs = productDetailEl.querySelectorAll('.product_detail_tab');
   const contents = productDetailEl.querySelectorAll('.product_detail_content');

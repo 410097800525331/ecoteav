@@ -88,8 +88,141 @@ $(document).ready(function () {
           <!-- btn -->
           <button type="submit" class="btn_ basic_btn_b">상담 신청하기</button>
       </div>
+
   `;
 
   $("#consultation_wrap_s").append(consultationTop);
   $("#consultation_wrap_e").append(consultationBottom);
+});
+
+$(function () {
+
+  /* ===============================
+     공통
+  =============================== */
+  function pad(n) {
+    return n < 10 ? '0' + n : n;
+  }
+
+  /* ===============================
+     달력
+  =============================== */
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  let year = today.getFullYear();
+  let month = today.getMonth();
+
+  const $calendar = $('.custom_calendar');
+  const $layer = $('.calendar_layer');
+  const $days = $('.calendar_days');
+  const $title = $('.cal_title');
+
+  function renderCalendar(y, m) {
+    $days.empty();
+    $title.text(`${y}.${pad(m + 1)}`);
+
+    const firstDay = new Date(y, m, 1).getDay();
+    const lastDate = new Date(y, m + 1, 0).getDate();
+
+    for (let i = 0; i < firstDay; i++) {
+      $days.append('<span class="empty"></span>');
+    }
+
+    for (let d = 1; d <= lastDate; d++) {
+      const date = new Date(y, m, d);
+      date.setHours(0, 0, 0, 0);
+
+      const isPast = date < today;
+      const isWeekend = date.getDay() === 0 || date.getDay() === 6;
+      const fullDate = `${y}-${pad(m + 1)}-${pad(d)}`;
+
+      let cls = '';
+      if (isPast || isWeekend) cls = 'disabled';
+
+      $days.append(`<span class="${cls}" data-date="${fullDate}">${d}</span>`);
+    }
+  }
+
+  renderCalendar(year, month);
+
+  $calendar.find('input').on('click', function () {
+    $layer.toggle();
+  });
+
+  $(document).on('click', '.calendar_days span', function () {
+    if ($(this).hasClass('disabled') || $(this).hasClass('empty')) return;
+
+    const val = $(this).data('date');
+    $calendar.find('input').val(val);
+    $calendar.addClass('checked');
+    $layer.hide();
+  });
+
+  $('.cal_prev').on('click', function () {
+    month--;
+    if (month < 0) { month = 11; year--; }
+    renderCalendar(year, month);
+  });
+
+  $('.cal_next').on('click', function () {
+    month++;
+    if (month > 11) { month = 0; year++; }
+    renderCalendar(year, month);
+  });
+
+  /* ===============================
+     시간 선택
+  =============================== */
+  $('.time_select input').on('click', function () {
+    $('.select_layer').hide();
+    $(this).siblings('.select_layer').toggle();
+  });
+
+  $('.time_layer li').on('click', function () {
+    const val = $(this).data('value');
+    $(this).closest('.custom_select').find('input').val(val);
+    $(this).closest('.select_layer').hide();
+  });
+
+  /* ===============================
+     외부 클릭
+  =============================== */
+  $(document).on('click', function (e) {
+    if (!$(e.target).closest('.custom_calendar, .custom_select').length) {
+      $('.calendar_layer, .select_layer').hide();
+    }
+  });
+
+  $(document).on('submit', 'form', function (e) {
+    const email = $(this).find('input[name="email"]').val().trim();
+    const phone = $(this).find('input[name="phone"]').val().trim();
+
+    // 이메일 정규식
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    // 연락처: 숫자만 + 9~11자리
+    const phoneRegex = /^[0-9]{9,11}$/;
+
+    $(document).on('input', 'input[name="phone"]', function () {
+      this.value = this.value.replace(/[^0-9]/g, '');
+    });
+
+    // 이메일 검사
+    if (!emailRegex.test(email)) {
+      alert('이메일 주소를 올바르게 입력해주세요.');
+      $(this).find('input[name="email"]').focus();
+      e.preventDefault();
+      return;
+    }
+
+    // 연락처 검사
+    if (!phoneRegex.test(phone)) {
+      alert('연락처는 숫자만 입력해주세요. (하이픈 제외)');
+      $(this).find('input[name="phone"]').focus();
+      e.preventDefault();
+      return;
+    }
+  });
+
 });

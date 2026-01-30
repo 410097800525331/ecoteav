@@ -1,4 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // 비밀번호 체크
+  function isValidPassword(pw) {
+    const lengthCheck = pw.length >= 10 && pw.length <= 16;
+    const hasLetter = /[a-zA-Z]/.test(pw);
+    const hasNumber = /[0-9]/.test(pw);
+    const hasSpecial = /[!@#$%^&*(),.?":{}|<>]/.test(pw);
+
+    return lengthCheck && hasLetter && hasNumber && hasSpecial;
+  }
+
+  // 연락처
+  $(document).on('input', 'input[name="phone"]', function () {
+    this.value = this.value.replace(/[^0-9]/g, '');
+  });
 
   /* ==========================
     회원 / 사업자 / 법인 노출
@@ -46,6 +60,24 @@ document.addEventListener("DOMContentLoaded", () => {
   updateMemberType();
   updateBizType();
 
+  // 사업자등록번호
+  function isValidBizNumber(bizNo) {
+    const nums = bizNo.replace(/[^0-9]/g, '');
+    if (nums.length !== 10) return false;
+
+    const check = [1, 3, 7, 1, 3, 7, 1, 3, 5];
+    let sum = 0;
+
+    for (let i = 0; i < 9; i++) {
+      sum += check[i] * parseInt(nums[i]);
+    }
+
+    sum += Math.floor((check[8] * parseInt(nums[8])) / 10);
+    const result = (10 - (sum % 10)) % 10;
+
+    return result === parseInt(nums[9]);
+  }
+
 
   /* ==========================
     전체 동의 체크박스
@@ -65,6 +97,55 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  function isAllRequiredAgreed(form) {
+    let valid = true;
+
+    $(form).find('.agree_item.required').each(function () {
+      if (!$(this).is(':checked')) {
+        valid = false;
+        return false;
+      }
+    });
+
+    return valid;
+  }
+  
+  $(document).on('submit', '#join_wrap form', function (e) {
+    const pw = $(this).find('input[name="password"]').val();
+    const pwConfirm = $(this).find('input[name="password_confirm"]').val();
+    const bizNoInput = $(this).find('input[name="biz_number"]');
+
+    // 비밀번호 조건
+    if (!isValidPassword(pw)) {
+      alert('비밀번호는 10~16자이며 영문, 숫자, 특수문자를 모두 포함해야 합니다.');
+      e.preventDefault();
+      return false;
+    }
+
+    // 비밀번호 일치
+    if (pw !== pwConfirm) {
+      alert('비밀번호가 일치하지 않습니다.');
+      e.preventDefault();
+      return false;
+    }
+
+    // 필수 약관
+    if (!isAllRequiredAgreed(this)) {
+      alert('필수 약관에 모두 동의해주세요.');
+      e.preventDefault();
+      return false;
+    }
+
+    // 사업자번호 (입력된 경우만)
+    if (bizNoInput.length && bizNoInput.val().trim() !== '') {
+      if (!isValidBizNumber(bizNoInput.val())) {
+        alert('유효하지 않은 사업자등록번호입니다.');
+        bizNoInput.focus();
+        e.preventDefault();
+        return false;
+      }
+    }
+  });
 
   /* ==========================
     다음 주소 검색

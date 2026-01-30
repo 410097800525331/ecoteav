@@ -7,7 +7,6 @@
   <title>에코티브 - 브랜드굿즈제작, 티백OEM/ODM, 블렌딩티 개발, 향료 개발</title>
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/consultation.css">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -15,18 +14,49 @@
   <section>
     <div id="consultation_wrap_s" data-type="visit"></div>
     <div id="consultation_wrap">
-    <div class="form_wrap">
+      <div class="form_wrap">
         <!-- form 2 -->
         <div class="form_row">
           <label class="form_label">방문 희망 날짜 <span class="red">*</span></label>
           <div class="form_field">
-            <input type="date" name="visit_date" required>
+            <div class="custom_calendar">
+              <input type="text" name="visit_date" placeholder="날짜를 선택해주세요" readonly required>
+
+              <div class="calendar_layer">
+                <div class="calendar_header">
+                  <button class="cal_prev">‹</button>
+                  <span class="cal_title"></span>
+                  <button class="cal_next">›</button>
+                </div>
+
+                <div class="calendar_week">
+                  <span>일</span><span>월</span><span>화</span>
+                  <span>수</span><span>목</span><span>금</span><span>토</span>
+                </div>
+
+                <div class="calendar_days"></div>
+              </div>
+
+              <span class="check_icon">✔</span>
+            </div>
           </div>
         </div>
         <div class="form_row">
           <label class="form_label">방문 희망 시간 <span class="red">*</span></label>
-          <div class="form_field" name="concept" required>
-            <input type="time" name="visit_time" required>
+          <div class="form_field">
+            <div class="custom_select time_select">
+              <input type="text" name="visit_time" placeholder="시간을 선택해주세요" readonly required>
+              <div class="select_layer time_layer">
+                <ul>
+                  <li data-time="10:00">10:00</li>
+                  <li data-time="11:00">11:00</li>
+                  <li data-time="13:00">13:00</li>
+                  <li data-time="14:00">14:00</li>
+                  <li data-time="15:00">15:00</li>
+                  <li data-time="16:00">16:00</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
         <div class="form_row">
@@ -37,19 +67,14 @@
             <label><input type="radio" name="category" value="기타"> 기타</label>
           </div>
         </div>
-    </div>
-    <div id="consultation_wrap_e"></div>
+      </div>
+      <div id="consultation_wrap_e"></div>
   </section>
   <div id="footer_wrap"></div>
 
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="../js/include.js"></script>
-    <script src="../js/consultation.js"></script>
-  
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="/js/include.js"></script>
+  <script src="/js/consultation.js"></script>
 </body>
 
 </html>
