@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>에코티브 - 브랜드굿즈제작, 티백OEM/ODM, 블렌딩티 개발, 향료 개발</title>
+  <link rel="icon" href="/ecoteav-favicon.png">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/user.css">
+</head>
+
+<body>
+
+  <div id="header_wrap"></div>
+  <section>
+    <div class="cart_inner">
+      <h2>장바구니</h2>
+      <div class="cart_top_bar">
+        <p>선택한 상품만 주문 및 결제가 가능합니다.</p>
+        <button class="btn_select_remove">선택상품 삭제</button>
+      </div>
+      <!-- LEFT -->
+      <div class="cart_box">
+        <div class="cart_header">
+          <div><input type="checkbox" id="check_all" checked></div>
+          <div>상품정보</div>
+          <div class="price">가격</div>
+          <div>수량</div>
+          <div class="price">합계</div>
+          <div></div>
+        </div>
+        <!-- item 1 -->
+        <div class="cart_item" data-product-id="BT001" data-price="10000" data-name="캐모마일">
+          <div><input type="checkbox" class="item_check" checked></div>
+          <div class="item_info">
+            <img src="/assets/img/shop/unnamed.jpg" alt="캐모마일 img">
+            <div>
+              <div>캐모마일</div>
+              <div class="item_option">50티백 · 무카페인</div>
+            </div>
+          </div>
+          <div class="price">10,000원</div>
+          <div class="qty_box">
+            <button class="qty_minus">-</button>
+            <input type="number" value="1" min="1">
+            <button class="qty_plus">+</button>
+          </div>
+          <div class="price item_total">10,000원</div>
+          <button class="remove_btn">✕</button>
+        </div>
+        <!-- item 2 -->
+        <div class="cart_item" data-product-id="BT002" data-price="5000" data-name="페퍼민트">
+          <div><input type="checkbox" class="item_check" checked></div>
+          <div class="item_info">
+            <img src="/assets/img/shop/unnamed (1).jpg" alt="페퍼민트">
+            <div>
+              <div class="item_name">페퍼민트</div>
+              <div class="item_option">50티백 · 무카페인</div>
+            </div>
+          </div>
+          <div class="price">5,000원</div>
+          <div class="qty_box">
+            <button class="qty_minus">-</button>
+            <input type="number" value="2" min="1">
+            <button class="qty_plus">+</button>
+          </div>
+          <div class="price item_total">5,000원</div>
+          <button class="remove_btn">✕</button>
+        </div>
+        <div class="cart_empty" style="display:none;">
+          장바구니에 담긴 상품이 없습니다.
+        </div>
+      </div>
+      <!-- RIGHT -->
+      <div class="summary_box">
+        <h2>결제 요약</h2>
+        <div class="summary_row">
+          <span>상품금액</span>
+          <span id="sum_price">0원</span>
+        </div>
+        <div class="summary_row">
+          <span>배송비</span>
+          <span id="delivery_fee">0원</span>
+        </div>
+        <p class="delivery_guide" id="delivery_guide">
+          50,000원 이상 구매 시 무료배송
+        </p>
+        <div class="coupon_box">
+          <select id="coupon_select">
+            <option value="0">쿠폰 선택</option>
+            <option value="2000" selected>2,000원 할인 쿠폰</option>
+          </select>
+        </div>
+        <div class="summary_row summary_total">
+          <span>총 결제금액</span>
+          <span id="final_price">0원</span>
+        </div>
+        <a href="/basic/shop_order.html"><button class="btn_ basic_btn_b">주문하기</button></a>
+      </div>
+    </div>
+  </section>
+
+
+  <script>
+    function formatPrice(num) {
+      return num.toLocaleString() + '원';
+    }
+
+    function calcTotal() {
+      let sum = 0;
+      const items = document.querySelectorAll('.cart_box .cart_item');
+
+      items.forEach(item => {
+        const check = item.querySelector('.item_check');
+        if (!check.checked) return;
+
+        const price = Number(item.dataset.price);
+        const qty = Number(item.querySelector('input').value);
+        const total = price * qty;
+
+        item.querySelector('.item_total').innerText = formatPrice(total);
+        sum += total;
+      });
+
+      const coupon = Number(coupon_select.value);
+      const FREE_DELIVERY = 50000;
+      const delivery = sum === 0 || sum >= FREE_DELIVERY ? 0 : 3000;
+      const final = Math.max(sum + delivery - coupon, 0);
+
+      sum_price.innerText = formatPrice(sum);
+      delivery_fee.innerText = formatPrice(delivery);
+      final_price.innerText = formatPrice(final);
+
+      delivery_guide.innerText =
+        sum >= FREE_DELIVERY
+          ? '무료배송이 적용되었습니다.'
+          : `${(FREE_DELIVERY - sum).toLocaleString()}원 더 구매 시 무료배송`;
+
+      const emptyBox = document.querySelector('.cart_empty');
+      emptyBox.style.display = items.length === 0 ? 'block' : 'none';
+    }
+
+    document.addEventListener('click', e => {
+      if (e.target.classList.contains('qty_plus')) {
+        const input = e.target.parentElement.querySelector('input');
+        input.value = Number(input.value) + 1;
+        calcTotal();
+      }
+      if (e.target.classList.contains('qty_minus')) {
+        const input = e.target.parentElement.querySelector('input');
+        input.value = Math.max(1, Number(input.value) - 1);
+        calcTotal();
+      }
+      if (e.target.classList.contains('remove_btn')) {
+        e.target.closest('.cart_item').remove();
+        calcTotal();
+      }
+    });
+
+    document.addEventListener('change', e => {
+      if (e.target.classList.contains('item_check') || e.target.id === 'coupon_select') {
+        calcTotal();
+      }
+      if (e.target.id === 'check_all') {
+        document.querySelectorAll('.item_check').forEach(chk => chk.checked = e.target.checked);
+        calcTotal();
+      }
+    });
+
+    calcTotal();
+
+    document.querySelector('.btn_select_remove')?.addEventListener('click', () => {
+      document.querySelectorAll('.cart_item').forEach(item => {
+        if (item.querySelector('.item_check').checked) {
+          item.remove();
+        }
+      });
+      calcTotal();
+    });
+
+    document.querySelector('.order_btn').addEventListener('click', () => {
+      const checked = document.querySelectorAll('.item_check:checked');
+
+      if (checked.length === 0) {
+        alert('주문할 상품을 선택해주세요.');
+        return;
+      }
+
+      // 다음 단계 예시
+      // location.href = '/order/order.html';
+    });
+
+  </script>
+  <div id="footer_wrap"></div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="/js/include.js"></script>
+</body>
+
+</html>

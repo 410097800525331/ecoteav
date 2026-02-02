@@ -68,9 +68,10 @@ $(document).ready(function () {
 
         <!-- user menu -->
         <div class="user_menu">
-          <a href="/basic/user_login.html">로그인</a>
-          <a href="/basic/user_join.html">회원가입</a>
-          <a href="/basic/user_mypage.html">내 정보</a>
+          <a href="/basic/user_login.html">LOGIN</a>
+          <a href="/basic/user_join.html">JOIN</a>
+          <a href="/basic/user_cart.html">CART</a>
+          <a href="/basic/user_mypage.html">MY PAGE</a>
         </div>
 
         <!-- mobile btn -->
@@ -83,9 +84,10 @@ $(document).ready(function () {
     <!-- mobile menu -->
     <nav id="mobile_gnb">
       <div class="mobile_user_menu">
-        <a href="/basic/user_login.html">로그인</a>
-        <a href="/basic/user_join.html">회원가입</a>
-        <a href="/basic/user_mypage.html">내 정보</a>
+        <a href="/basic/user_login.html">LOGIN</a>
+        <a href="/basic/user_join.html">JOIN</a>
+        <a href="/basic/user_cart.html">CART</a>
+        <a href="/basic/user_mypage.html">MY PAGE</a>
       </div>
 
       <ul id="mobile_main">

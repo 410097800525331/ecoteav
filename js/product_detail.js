@@ -196,7 +196,7 @@ $(document).ready(function () {
         배송 방법 : 택배<br>
         택배사 : CJ대한통운<br>
         배송 비용 : 3,000원 (50,000원이상 구매 시 무료배송)<br>
-        배송 기간 : 평균 2일 ~ 4일소요(주말, 공휴일 제외)<br>
+        배송 기간 : 평균 2일 ~ 4일소요(주말, 공휴일 제외)<br><br>
         배송 안내 : <br>
         - 산간벽지나 도서지방은 별도의 추가금액을 지불하셔야 하는 경우가 있습니다.<br>
         - 고객님께서 주문하신 상품은 입금 확인후 배송해 드립니다. 다만, 상품종류에 따라서 상품의 배송이 다소 지연될 수 있습니다.<br>
@@ -244,54 +244,53 @@ $(document).ready(function () {
   `;
 
   // 수량 금액 증가
-  const qtyInput = document.getElementById('qty_input');
-  const totalPriceEl = document.getElementById('total_price');
-  const optionPriceEl = document.querySelector('.option_price');
+  if (product) {
+    const qtyInput = document.getElementById('qty_input');
+    const totalPriceEl = document.getElementById('total_price');
+    const optionPriceEl = document.querySelector('.option_price');
 
-  const unitPrice = product.sale;
+    const unitPrice = product.sale;
 
-  /* 금액 계산 */
-  function updatePrice() {
-    const qty = Number(qtyInput.value);
-    const total = unitPrice * qty;
+    function updatePrice() {
+      const qty = Number(qtyInput.value);
+      const total = unitPrice * qty;
 
-    optionPriceEl.textContent = total.toLocaleString() + '원';
-    totalPriceEl.textContent = total.toLocaleString() + '원';
+      optionPriceEl.textContent = total.toLocaleString() + '원';
+      totalPriceEl.textContent = total.toLocaleString() + '원';
+    }
+
+    updatePrice();
+
+    document.querySelector('.qty_btn.plus').addEventListener('click', () => {
+      qtyInput.value = Number(qtyInput.value) + 1;
+      updatePrice();
+    });
+
+    document.querySelector('.qty_btn.minus').addEventListener('click', () => {
+      if (qtyInput.value > 1) {
+        qtyInput.value = Number(qtyInput.value) - 1;
+        updatePrice();
+      }
+    });
+
+    qtyInput.addEventListener('input', () => {
+      if (qtyInput.value < 1) qtyInput.value = 1;
+      updatePrice();
+    });
+
+    document.querySelector('.btn_cart').addEventListener('click', () => {
+      alert('장바구니에 담겼습니다');
+    });
+
+    document.querySelector('.btn_wish').addEventListener('click', () => {
+      alert('관심상품에 추가되었습니다');
+    });
+
+    document.querySelector('.btn_buy').addEventListener('click', () => {
+      alert('구매 페이지로 이동합니다');
+    });
   }
 
-  /* 초기 실행 */
-  updatePrice();
-
-  /* 수량 버튼 */
-  document.querySelector('.qty_btn.plus').addEventListener('click', () => {
-    qtyInput.value = Number(qtyInput.value) + 1;
-    updatePrice();
-  });
-
-  document.querySelector('.qty_btn.minus').addEventListener('click', () => {
-    if (qtyInput.value > 1) {
-      qtyInput.value = Number(qtyInput.value) - 1;
-      updatePrice();
-    }
-  });
-
-  qtyInput.addEventListener('input', () => {
-    if (qtyInput.value < 1) qtyInput.value = 1;
-    updatePrice();
-  });
-
-  /* 버튼 액션 */
-  document.querySelector('.btn_cart').addEventListener('click', () => {
-    alert('장바구니에 담겼습니다');
-  });
-
-  document.querySelector('.btn_wish').addEventListener('click', () => {
-    alert('관심상품에 추가되었습니다');
-  });
-
-  document.querySelector('.btn_buy').addEventListener('click', () => {
-    alert('구매 페이지로 이동합니다');
-  });
 
 
   const tabs = productDetailEl.querySelectorAll('.product_detail_tab');
