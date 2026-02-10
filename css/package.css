@@ -168,7 +168,7 @@
     flex: 1 1 100%;
   }
 }
-@media (max-width: 5760px) {
+@media (max-width: 576px) {
   .qty_box {
     width: 100px;
   }
@@ -182,6 +182,13 @@
   }
   .radio_list {
     gap: 0;
+  }
+  .option_inner label {
+    width: 120px;
+  }
+  .product_detail_tabs button {
+    font-size: .7rem;
+    padding: 0;
   }
 }
 

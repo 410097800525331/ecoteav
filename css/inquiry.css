@@ -234,6 +234,17 @@ form {
   line-height: 1.5;
 }
 @media (max-width: 768px) {
+  .board_table {
+    font-size: .8rem;
+  }
+  span.status {
+    font-size: 1rem;
+    border-width: .5px;
+    padding: 2px 8px;
+  }
+  .board_table td {
+    width: 80px;
+  }
   .faq_tabs {
     flex-direction: column;
   }

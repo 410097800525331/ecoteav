@@ -25,7 +25,7 @@
 @media (max-width: 1024px) {
   .about_row {
     grid-template-columns: 1fr 1fr;
-    padding: 36px;
+    padding: 24px;
   }
   .about_row img {
     height: 380px;
@@ -69,11 +69,6 @@
   margin-bottom: 16px;
 }
 @media (max-width: 768px) {
-  .about_icon_inner {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (max-width: 380px) {
   .about_icon_inner {
     grid-template-columns: repeat(1, 1fr);
   }

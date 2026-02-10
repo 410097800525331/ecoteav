@@ -128,12 +128,13 @@ $(document).ready(function () {
         </li>
         <li>
           <div class="mobile_main_menu">취급원료(Shop)<span class="toggle_icon">+</span></div>
-          <!-- <ul class="mobile_sub">
-            <li><a href="/basic/shop_single_tea.html">허브/홍차</a></li>
-            <li><a href="/basic/shop_korean_ingredient.html">국내산 원료</a></li>
-            <li><a href="/basic/shop_flavor.html">시그니쳐 향료</a></li>
-            <li><a href="/basic/shop_sample_request.html">샘플 신청</a></li>
-          </ul> -->
+          <ul class="mobile_sub">
+            <li>
+              <a href="/basic/shop.html" class="mobile_main_menu link_only">
+                취급원료(Shop)
+              </a>
+            </li>
+          </ul>
         </li>
         <li>
           <div class="mobile_main_menu">문의하기<span class="toggle_icon">+</span></div>
