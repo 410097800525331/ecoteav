@@ -29,11 +29,7 @@
         <h2 class="product_title">[소량제작 풀컬러] 자동롤</h2>
         <div class="form_item">
           <label for="size">사이즈</label>
-          <select id="size" required>
-            <option value="">선택해주세요</option>
-            <option>150 x 215 + 80 (20-30티백 규격)</option>
-            <option>200 x 265 + 10 (40-50티백 규격)</option>
-          </select>
+          <input type="text" id="material" value="500mm x400~450m" disabled>
         </div>
         <div class="option_group">
           <label for="material">원단</label>
@@ -45,7 +41,7 @@
             <div class="option_inner">
               <label>코팅</label>
               <ul class="radio_list">
-                <li><label><input type="radio" name="opt2" value="0"> 유광</label></li>
+                <li><label><input type="radio" name="opt2" value="0" required> 유광</label></li>
                 <li><label><input type="radio" name="opt2" value="27500"> 무광</label></li>
               </ul>
               <div>0원</div>
@@ -53,7 +49,7 @@
             <div class="option_inner">
               <label>이지컷</label>
               <ul class="radio_list">
-                <li><label><input type="radio" name="opt8" value="137500"> 있음</label></li>
+                <li><label><input type="radio" name="opt8" value="137500" required> 있음</label></li>
                 <li><label><input type="radio" name="opt8" value="0"> 없음</label></li>
               </ul>
               <div>0원</div>
@@ -61,7 +57,7 @@
             <div class="option_inner">
               <label>디자인 작업종류</label>
               <ul class="radio_list">
-                <li><label><input type="radio" name="opt7" value="opt1T"> 1종</label></li>
+                <li><label><input type="radio" name="opt7" value="opt1T" checked> 1종</label></li>
                 <li><label><input type="radio" name="opt7" value="opt2T"> 2종</label></li>
               </ul>
               <div>0원</div>
@@ -82,6 +78,7 @@
             <button type="button" class="qty_btn plus">
               <i class="fa-solid fa-plus"></i>
             </button>
+            <div>= <span>1장</span></div>
           </div>
         </div>
       </div>
@@ -105,7 +102,176 @@
   <div id="footer_wrap"></div>
 
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <script src="../js/include.js"></script>
+  <script>
+    $(document).ready(function () {
+
+      const type = $('#package_wrap').data('type');
+
+      if (type !== 'roll') return; // 자동롤일 때만 실행
+
+      const BASE_PRICE = 865000;
+
+      const qtyInput = $('#qty');
+      const plusBtn = $('.plus');
+      const minusBtn = $('.minus');
+
+      const priceEl = $('#price');
+      const addPriceEl = $('#add_price');
+      const unitPriceEl = $('#unit_price');
+      const totalPriceEl = $('#total_price');
+
+      const buyBtn = $('.basic_btn_b');
+      const cartBtn = $('.basic_btn_w');
+      const qtyGroup = $('.qty_group');
+
+      let qty = 1;
+
+      /* =========================
+          수량 표시 영역 생성
+      ========================= */
+
+      if (!$('.qty_display').length) {
+        qtyGroup.append(`
+      <div class="qty_display">
+        = <span class="qty_text">1장</span>
+        <div class="design_extra"></div>
+        <div class="qty_notice">제품 사이즈에 따라 인쇄 수량이 달라집니다. 자세한 내용은 상담을 통해 확인 가능합니다.</div>
+      </div>
+    `);
+      }
+
+      const qtyTextEl = $('.qty_text');
+      const designExtraEl = $('.design_extra');
+
+      /* =========================
+          필수 옵션 체크
+      ========================= */
+
+      function isAllOptionsSelected() {
+
+        let valid = true;
+
+        $('.option_inner').each(function () {
+
+          const name = $(this).find('input[type=radio]').first().attr('name');
+
+          if (!$(`input[name="${name}"]:checked`).length) {
+            valid = false;
+          }
+
+        });
+
+        return valid;
+      }
+
+      function setButtonsState(enabled) {
+        buyBtn.prop('disabled', !enabled);
+        cartBtn.prop('disabled', !enabled);
+      }
+
+      /* =========================
+          수량 버튼
+      ========================= */
+
+      plusBtn.on('click', function () {
+        qty++;
+        qtyInput.val(qty);
+        updateAll();
+      });
+
+      minusBtn.on('click', function () {
+        if (qty > 1) {
+          qty--;
+          qtyInput.val(qty);
+          updateAll();
+        }
+      });
+
+      /* =========================
+          옵션 변경
+      ========================= */
+
+      $('input[type=radio]').on('change', function () {
+        updateAll();
+      });
+
+      /* =========================
+          전체 계산
+      ========================= */
+
+      function updateAll() {
+
+        if (!isAllOptionsSelected()) {
+          resetPrice();
+          setButtonsState(false);
+          return;
+        }
+
+        setButtonsState(true);
+
+        /* ----- 수량 표시 ----- */
+
+        qtyTextEl.text(qty + "장");
+
+        const designType = $('input[name="opt7"]:checked').val();
+
+        if (designType === "opt2T") {
+
+          let eachQty = 1;
+
+          if (qty >= 3) {
+            eachQty = qty - 1;
+          }
+
+          designExtraEl.text(`(상품종류별 각 ${eachQty}장)`);
+
+        } else {
+          designExtraEl.text("");
+        }
+
+        /* ----- 후가공 금액 ----- */
+
+        let addPrice = 0;
+
+        $('.option_inner').each(function () {
+
+          const checked = $(this).find('input[type=radio]:checked');
+          const priceBox = $(this).find('div').last();
+
+          const val = checked.val();
+
+          if (!isNaN(val)) {
+            const num = Number(val);
+            addPrice += num;
+            priceBox.text(num.toLocaleString() + "원");
+          } else {
+            priceBox.text("0원");
+          }
+
+        });
+
+        const totalPrice = BASE_PRICE + addPrice;
+        const unitPrice = Math.floor(totalPrice / qty);
+
+        priceEl.text(BASE_PRICE.toLocaleString() + "원");
+        addPriceEl.text(addPrice.toLocaleString() + "원");
+        totalPriceEl.text(totalPrice.toLocaleString() + "원");
+        unitPriceEl.text(unitPrice.toLocaleString() + "원");
+      }
+
+      function resetPrice() {
+        priceEl.text("0원");
+        addPriceEl.text("0원");
+        totalPriceEl.text("0원");
+        unitPriceEl.text("0원");
+      }
+
+      /* 초기 상태 */
+
+      setButtonsState(false);
+    });
+  </script>
+  <script src="/js/include.js"></script>
   <script src="/js/product_detail.js"></script>
 </body>
 

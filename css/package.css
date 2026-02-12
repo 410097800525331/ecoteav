@@ -1,5 +1,9 @@
 @charset "utf-8";
 
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
 /* 왼쪽: 상품 이미지 */
 .package_inner {
   display: flex;

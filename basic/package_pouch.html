@@ -78,7 +78,7 @@
             <div class="option_inner">
               <label>밸브부착</label>
               <ul class="radio_list">
-                <li><label><input type="radio" name="opt5" value="146685"> 있음</label></li>
+                <li><label><input type="radio" name="opt5" value="205359"> 있음</label></li>
                 <li><label><input type="radio" name="opt5" value="0"> 없음</label></li>
               </ul>
               <div>0원</div>
@@ -116,6 +116,7 @@
               <i class="fa-solid fa-plus"></i>
             </button>
           </div>
+          <div>= <span>2,667장</span></div>
         </div>
       </div>
       <!-- 오른쪽: 가격 및 결제 -->
@@ -138,7 +139,159 @@
   <div id="footer_wrap"></div>
 
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <script src="../js/include.js"></script>
+ <script>
+$(document).ready(function () {
+
+  const BASE_PRICE = 1370000;
+  const BASE_QTY = 2667;
+
+  const sizeSelect = $('#size');
+  const qtyInput = $('#qty');
+  const plusBtn = $('.plus');
+  const minusBtn = $('.minus');
+
+  const priceEl = $('#price');
+  const addPriceEl = $('#add_price');
+  const unitPriceEl = $('#unit_price');
+  const totalPriceEl = $('#total_price');
+  const qtyTextEl = $('.qty_group span');
+
+  let multiply = 0;
+
+  /* =========================
+      사이즈 선택
+  ========================= */
+
+  sizeSelect.on('change', function () {
+
+    if ($(this).val() !== "") {
+      multiply = 1;
+      qtyInput.val(1);
+      updateAll();
+    } else {
+      multiply = 0;
+      qtyInput.val(0);
+      resetAll();
+    }
+
+  });
+
+  /* =========================
+      수량 버튼
+  ========================= */
+
+  plusBtn.on('click', function () {
+    if (!sizeSelect.val()) return;
+    multiply++;
+    qtyInput.val(multiply);
+    updateAll();
+  });
+
+  minusBtn.on('click', function () {
+    if (multiply > 1) {
+      multiply--;
+      qtyInput.val(multiply);
+      updateAll();
+    }
+  });
+
+  /* 직접 입력 대응 */
+  qtyInput.on('input', function () {
+
+    let val = Number($(this).val());
+
+    if (!sizeSelect.val()) {
+      $(this).val(0);
+      return;
+    }
+
+    if (val < 1 || isNaN(val)) {
+      val = 1;
+    }
+
+    multiply = val;
+    $(this).val(val);
+    updateAll();
+  });
+
+  /* =========================
+      옵션 변경
+  ========================= */
+
+  $('input[type=radio]').on('change', function () {
+    updateAll();
+  });
+
+  /* =========================
+      계산 함수
+  ========================= */
+
+  function updateAll() {
+
+    if (!sizeSelect.val() || multiply === 0) {
+      resetAll();
+      return;
+    }
+
+    const totalQty = BASE_QTY * multiply;
+
+    /* ---- 2종 처리 ---- */
+
+    const designType = $('input[name="opt7"]:checked').val();
+    let displayQty = totalQty.toLocaleString() + "장";
+
+    if (designType === "opt2T") {
+      const half = Math.floor(totalQty / 2);
+      displayQty += " (상품종류별 각 " + half.toLocaleString() + "장)";
+    }
+
+    qtyTextEl.text(displayQty);
+
+    /* ---- 옵션 금액 ---- */
+
+    let addPrice = 0;
+
+    $('.option_inner').each(function () {
+
+      const checked = $(this).find('input[type=radio]:checked');
+      const priceBox = $(this).find('div').last();
+
+      if (checked.length > 0) {
+        const val = Number(checked.val());
+
+        if (!isNaN(val)) {
+          addPrice += val;
+          priceBox.text(val.toLocaleString() + "원");
+        } else {
+          priceBox.text("0원");
+        }
+      } else {
+        priceBox.text("0원");
+      }
+
+    });
+
+    const baseTotal = BASE_PRICE * multiply;
+    const totalPrice = baseTotal + addPrice;
+    const unitPrice = Math.floor(totalPrice / totalQty);
+
+    priceEl.text(baseTotal.toLocaleString() + "원");
+    addPriceEl.text(addPrice.toLocaleString() + "원");
+    totalPriceEl.text(totalPrice.toLocaleString() + "원");
+    unitPriceEl.text(unitPrice.toLocaleString() + "원");
+  }
+
+  function resetAll() {
+    priceEl.text("0원");
+    addPriceEl.text("0원");
+    totalPriceEl.text("0원");
+    unitPriceEl.text("0원");
+    qtyTextEl.text("0장");
+  }
+
+});
+</script>
+  <script src="/js/include.js"></script>
   <script src="/js/product_detail.js"></script>
 </body>
 

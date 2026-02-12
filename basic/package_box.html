@@ -108,6 +108,154 @@
   <div id="footer_wrap"></div>
 
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+
+      let BASE_PRICE = 0;
+      const BASE_QTY = 2000;
+
+      const sizeSelect = $('select').eq(0);
+      const qtyInput = $('#qty');
+      const plusBtn = $('.plus');
+      const minusBtn = $('.minus');
+
+      const priceEl = $('#price');
+      const addPriceEl = $('#add_price');
+      const unitPriceEl = $('#unit_price');
+      const totalPriceEl = $('#total_price');
+
+      let multiply = 1;
+
+      /* =========================
+          사이즈 선택
+      ========================= */
+
+      sizeSelect.on('change', function () {
+
+        const val = $(this).val();
+
+        if (val.includes('130 x 110 + 55')) {
+          BASE_PRICE = 890000;
+        }
+        else if (val.includes('130 x 110 + 90')) {
+          BASE_PRICE = 1150000;
+        }
+        else {
+          BASE_PRICE = 0;
+        }
+
+        multiply = 1;
+        qtyInput.val(1);
+
+        updateAll();
+      });
+
+      /* =========================
+          수량 버튼
+      ========================= */
+
+      plusBtn.on('click', function () {
+        if (!BASE_PRICE) return;
+        multiply++;
+        qtyInput.val(multiply);
+        updateAll();
+      });
+
+      minusBtn.on('click', function () {
+        if (multiply > 1) {
+          multiply--;
+          qtyInput.val(multiply);
+          updateAll();
+        }
+      });
+
+      qtyInput.on('input', function () {
+        let val = Number($(this).val());
+        if (val < 1 || isNaN(val)) val = 1;
+        multiply = val;
+        $(this).val(val);
+        updateAll();
+      });
+
+      /* =========================
+          옵션 변경
+      ========================= */
+
+      $('input[type=radio]').on('change', function () {
+        updateAll();
+      });
+
+      /* =========================
+          계산 함수
+      ========================= */
+
+      function updateAll() {
+
+        if (!BASE_PRICE) {
+          resetAll();
+          return;
+        }
+
+        const totalQty = BASE_QTY * multiply;
+
+        /* ---- 디자인 분할 ---- */
+
+        const designType = $('input[name="opt7"]:checked').val();
+        let divisor = 1;
+
+        if (designType === "opt2T") divisor = 2;
+        if (designType === "opt3T") divisor = 3;
+        if (designType === "opt4T") divisor = 4;
+
+        const dividedQty = Math.floor(totalQty / divisor);
+
+        /* ---- 후가공 금액 ---- */
+
+        let addPrice = 0;
+
+        $('.option_inner').each(function () {
+
+          const checked = $(this).find('input[type=radio]:checked');
+          const priceBox = $(this).find('div').last();
+
+          if (checked.length > 0) {
+
+            const labelText = checked.parent().text().trim();
+            let optionPrice = 0;
+
+            if (labelText.includes("라미네이팅")) optionPrice = 120000;
+            if (labelText.includes("금속박")) optionPrice = 180000;
+            if (labelText.includes("형압")) optionPrice = 150000;
+
+            addPrice += optionPrice;
+            priceBox.text(optionPrice.toLocaleString() + "원");
+
+          } else {
+            priceBox.text("0원");
+          }
+
+        });
+
+        const baseTotal = BASE_PRICE * multiply;
+        const totalPrice = baseTotal + addPrice;
+        const unitPrice = Math.floor(totalPrice / totalQty);
+
+        priceEl.text(baseTotal.toLocaleString() + "원");
+        addPriceEl.text(addPrice.toLocaleString() + "원");
+        totalPriceEl.text(totalPrice.toLocaleString() + "원");
+        unitPriceEl.text(unitPrice.toLocaleString() + "원");
+
+      }
+
+      function resetAll() {
+        priceEl.text("0원");
+        addPriceEl.text("0원");
+        totalPriceEl.text("0원");
+        unitPriceEl.text("0원");
+      }
+
+    });
+  </script>
   <script src="/js/include.js"></script>
   <script src="/js/product_detail.js"></script>
 </body>
