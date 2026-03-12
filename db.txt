@@ -1,0 +1,23 @@
+TiDB Cloud
+DB_HOST=gateway01.ap-northeast-1.prod.aws.tidbcloud.com
+DB_PORT=4000
+DB_USERNAME='2daYJVMxncpy1xz.root'
+DB_PASSWORD='e3rMMoKb7OQVojbI'
+DB_DATABASE='jejugroup_db'
+
+
+닷홈
+URL: kimxx.dothome.co.kr                      (URL: mysql-subwaykr.alwaysdata.net)
+db명: kimxx
+dbid: kimxx
+dbpw: rkrjsj1523!
+
+
+
+SPRING_DATASOURCE_URL=jdbc:mysql://kimxx.dothome.co.kr:3306/kimxx?useSSL=false&serverTimezone=UTC
+SPRING_DATASOURCE_USERNAME=jsp
+SPRING_DATASOURCE_PASSWORD=1234
+SPRING_PROFILES_ACTIVE=prod
+
+
+
